@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <title>Ресторан «Ташкент» — Восточная кухня & Лаундж</title>
+  <meta name="description" content="Ресторан «Ташкент» — авторская восточная кухня на живом огне, аутентичный лаундж, тандыр и легендарный плов.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <!-- Google Fonts: Playfair Display + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== FIXED TOP HEADER ==================== -->
+  <header class="header header_fixed" id="mainHeader">
+    <div class="container header__container">
+      <!-- Left: Brand Logo -->
+      <a href="#hero" class="header__brand">
+        <span class="brand-monogram">Т</span>
+        <div class="brand-text-wrap">
+          <span class="brand-title">ТАШКЕНТ</span>
+          <span class="brand-tagline">RESTAURANT & LOUNGE</span>
+        </div>
+      </a>
+
+      <!-- Center: Main Navigation (No Halls) -->
+      <nav class="header__nav" aria-label="Основное меню">
+        <a href="#about" class="nav-link">О ресторане</a>
+        <a href="#menu" class="nav-link">Меню кухни</a>
+        <a href="#reviews" class="nav-link">Отзывы</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+      </nav>
+
+      <!-- Right: Action Buttons -->
+      <div class="header__right">
+        <a href="#menu" class="btn btn_outline btn_header">Меню</a>
+        <button class="btn btn_gold btn_header btn-book" type="button">
+          Забронировать<span class="gold-shimmer"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (FULLSCREEN SLIDER) ==================== -->
+  <main class="main main_sld" id="hero">
+    <div class="hero-slider-container">
+      <div class="hero-slide active" data-slide="0">
+        <div class="slide-bg" style="background-image: url('images/1.webp');"></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-slide" data-slide="1">
+        <div class="slide-bg" style="background-image: url('images/2.webp');"></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-slide" data-slide="2">
+        <div class="slide-bg" style="background-image: url('images/3.webp');"></div>
+        <div class="hero-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Centered Brand Emblem -->
+    <div class="hero-center-box">
+      <div class="hero-emblem-badge">
+        <svg width="64" height="64" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="37" stroke="#C5A059" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M40 12 L44 26 L58 26 L46 35 L51 49 L40 40 L29 49 L34 35 L22 26 L36 26 Z" fill="url(#goldGrad)" stroke="#E2C285" stroke-width="1"/>
+          <ellipse cx="40" cy="56" rx="20" ry="6" fill="#141312" stroke="#C5A059" stroke-width="1.5"/>
+          <path d="M25 56 C25 68 55 68 55 56" fill="url(#goldGrad)" stroke="#C5A059" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E2C285"/>
+              <stop offset="50%" stop-color="#C5A059"/>
+              <stop offset="100%" stop-color="#8E6A2C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <span class="hero-subheading">ВОСТОЧНОЕ ГОСТЕПРИИМСТВО & ЖИВОЙ ОГОНЬ</span>
+      <h1 class="hero-main-title">ТАШКЕНТ</h1>
+      <p class="hero-description">Аутентичный вкус плова из чугунного казана, мясо на березовых углях и атмосфера уюта в сердце города</p>
+
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn_outline btn_hero">Смотреть меню</a>
+        <button class="btn btn_gold btn_hero btn-book" type="button">
+          Забронировать столик<span class="gold-shimmer"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Slider Navigation Arrows -->
+    <button class="slider-arrow slider-arrow_prev" id="heroPrevBtn" aria-label="Предыдущий слайд">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="slider-arrow slider-arrow_next" id="heroNextBtn" aria-label="Следующий слайд">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <!-- Slider Dots -->
+    <div class="slider-dots" id="heroDots">
+      <button class="dot active" data-slide="0" aria-label="Слайд 1"></button>
+      <button class="dot" data-slide="1" aria-label="Слайд 2"></button>
+      <button class="dot" data-slide="2" aria-label="Слайд 3"></button>
+    </div>
+  </main>
+
+  <!-- ==================== PROMO & ATMOSPHERE SECTION ==================== -->
+  <section class="promo-section" id="about">
+    <div class="container">
+      
+      <!-- Promo Item 1: Атмосфера -->
+      <div class="promo-row">
+        <div class="promo-text-col">
+          <span class="section-tag">ФИЛОСОФИЯ ВКУСА</span>
+          <h2 class="section-title">Атмосфера ресторана «Ташкент»</h2>
+          <div class="promo-body">
+            <p>Ресторан <strong>«Ташкент»</strong> — это уютный островок восточного тепла, где вековые кулинарные традиции сочетаются со стильным современным лаунджем.</p>
+            <p>Теплый свет латунных светильников, мягкие диваны с национальными узорами, аромат свежеиспеченного тандырного хлеба и тихая музыка создают идеальную обстановку для свидания, семейного ужина или деловой беседы.</p>
+          </div>
+          <div class="promo-features-list">
+            <div class="feature-item">
+              <span class="feature-bullet">✦</span>
+              <span>Традиционные топчаны с подушками и мягкие диваны</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-bullet">✦</span>
+              <span>Живой огонь, открытая печь-тандыр и чугунный казан</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-bullet">✦</span>
+              <span>Коллекция горных чаев и восточных сладостей</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-gallery-col">
+          <div class="gallery-slider-frame" id="promoSlider1">
+            <div class="gallery-slide">
+              <img loading="lazy" src="images/4.webp" alt="Интерьер ресторана Ташкент">
+            </div>
+            <div class="gallery-slide">
+              <img loading="lazy" src="images/5.webp" alt="Уютная атмосфера ресторана">
+            </div>
+          </div>
+          <div class="gallery-slider-nav">
+            <button class="nav-btn btn-prev" data-slider="promoSlider1" aria-label="Назад">&larr;</button>
+            <button class="nav-btn btn-next" data-slider="promoSlider1" aria-label="Вперед">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promo Item 2: Традиции и шефы -->
+      <div class="promo-row promo-row_reverse">
+        <div class="promo-gallery-col">
+          <div class="gallery-slider-frame" id="promoSlider2">
+            <div class="gallery-slide">
+              <img loading="lazy" src="images/6.webp" alt="Блюда на живом огне">
+            </div>
+            <div class="gallery-slide">
+              <img loading="lazy" src="images/7.webp" alt="Подача восточных блюд">
+            </div>
+          </div>
+          <div class="gallery-slider-nav">
+            <button class="nav-btn btn-prev" data-slider="promoSlider2" aria-label="Назад">&larr;</button>
+            <button class="nav-btn btn-next" data-slider="promoSlider2" aria-label="Вперед">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="promo-text-col">
+          <span class="section-tag">МАСТЕРСТВО ОШПАЗОВ</span>
+          <h2 class="section-title">Рецепты, проверенные веками</h2>
+          <div class="promo-body">
+            <p>Каждое утро наши мастера-ошпазы разжигают огонь под большими чугунными казанами. Мы готовим фирменные пловы из отборного ферганского риса девзира, парного мяса ягненка, сладкой моркови и пряностей, привезенных прямо со старинных базаров.</p>
+            <p>В раскаленном тандыре выпекаются слоеные самсы и золотистые лепешки, а на березовых углях жарятся нежнейшие люля-кебаб и шашлыки с дымком.</p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-value">400+</span>
+              <span class="stat-label">лет истории рецептов</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">живой огонь & тандыр</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">4</span>
+              <span class="stat-label">вида фирменного плова</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MENU PRESENTATION ==================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">КУЛИНАРНАЯ КАРТА</span>
+        <h2 class="section-title">Меню ресторана «Ташкент»</h2>
+        <p class="section-subtitle">Авторские блюда от наших шеф-поваров, приготовленные исключительно из свежих продуктов</p>
+      </div>
+
+      <!-- Фильтры категорий -->
+      <div class="menu-filters">
+        <button class="filter-btn active" data-category="all" type="button">Все блюда</button>
+        <button class="filter-btn" data-category="plov" type="button">Пловы на огне</button>
+        <button class="filter-btn" data-category="hot" type="button">Горячее & Супы</button>
+        <button class="filter-btn" data-category="starters" type="button">Закуски & Тандыр</button>
+        <button class="filter-btn" data-category="drinks" type="button">Напитки & Чаи</button>
+      </div>
+
+      <!-- Карточки блюд -->
+      <div class="menu-grid">
+        <!-- Блюдо 1: Плов (plow.png) -->
+        <div class="menu-card" data-category="plov">
+          <div class="menu-card__image-box">
+            <img src="images/plow.png" alt="Чайханский плов" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Хит ресторана</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Чайханский плов</h4>
+              <span class="menu-card__price">490 ₽</span>
+            </div>
+            <p class="menu-card__desc">Классический плов с отборной сочной бараниной, желтой самаркандской морковью, зирой и цельной головкой печеного чеснока.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 350 г</span>
+              <span class="menu-card__tag">На живом огне</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо: Казан-кебаб (плов 2.webp) -->
+        <div class="menu-card" data-category="hot">
+          <div class="menu-card__image-box">
+            <img src="images/плов 2.webp" alt="Казан-кебаб" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Фирменное</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Казан-кебаб</h4>
+              <span class="menu-card__price">620 ₽</span>
+            </div>
+            <p class="menu-card__desc">Томленая в чугунном казане сочная баранина на косточке с золотистым печеным картофелем, луком и восточными специями.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 420 г</span>
+              <span class="menu-card__tag">В казане</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо: Шурпа по-восточному (плов 3.webp) -->
+        <div class="menu-card" data-category="hot">
+          <div class="menu-card__image-box">
+            <img src="images/плов 3.webp" alt="Шурпа по-восточному" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Традиционное</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Шурпа по-восточному</h4>
+              <span class="menu-card__price">450 ₽</span>
+            </div>
+            <p class="menu-card__desc">Наваристый душистый бульон с нежнейшим ягненком, крупными овощами, нутом и свежей душистой зеленью.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 400 мл</span>
+              <span class="menu-card__tag">Наваристый бульон</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо: Самса из тандыра (плов 4.webp) -->
+        <div class="menu-card" data-category="starters">
+          <div class="menu-card__image-box">
+            <img src="images/плов 4.webp" alt="Самса из тандыра" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Из тандыра</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Самса с мясом</h4>
+              <span class="menu-card__price">190 ₽</span>
+            </div>
+            <p class="menu-card__desc">Хрустящее слоеное тесто прямо из печи-тандыра с сочной рубленой говядиной, луком, зирой и семенами черного кунжута.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">1 шт / 130 г</span>
+              <span class="menu-card__tag">С пылу с жару</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 2 -->
+        <div class="menu-card" data-category="plov">
+          <div class="menu-card__image-box">
+            <img src="images/plov-samarkand.svg" alt="Праздничный плов" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Фирменное</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Праздничный плов</h4>
+              <span class="menu-card__price">540 ₽</span>
+            </div>
+            <p class="menu-card__desc">Нежная фермерская говядина, сладкий кишмиш, барбарис, нут и тонкий благородный аромат шафрана.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 360 г</span>
+              <span class="menu-card__tag">Самаркандский</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 3 -->
+        <div class="menu-card" data-category="plov">
+          <div class="menu-card__image-box">
+            <img src="images/shah-plov.svg" alt="Шах-плов в лаваше" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Особая подача</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Шах-плов в лаваше</h4>
+              <span class="menu-card__price">650 ₽</span>
+            </div>
+            <p class="menu-card__desc">Запеченный в хрустящем лаваше с сухофруктами, каштанами, топленым сливочным маслом и мясом молодого ягненка.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 400 г</span>
+              <span class="menu-card__tag">Хрустящая корочка</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 4 -->
+        <div class="menu-card" data-category="plov">
+          <div class="menu-card__image-box">
+            <img src="images/plov-fergana.svg" alt="Ферганский плов" class="menu-card__img" loading="lazy">
+            <span class="menu-card__badge">Пикантный</span>
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Ферганский плов</h4>
+              <span class="menu-card__price">590 ₽</span>
+            </div>
+            <p class="menu-card__desc">Плов из темного риса девзира с перепелиными яйцами, курдючным жиром и жгучим стручковым перчиком.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 370 г</span>
+              <span class="menu-card__tag">Рис «Девзира»</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 5 -->
+        <div class="menu-card" data-category="starters">
+          <div class="menu-card__image-box">
+            <img src="images/salad-achik-chuchuk.svg" alt="Салат Ачик-чучук" class="menu-card__img" loading="lazy">
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Салат «Ачик-чучук»</h4>
+              <span class="menu-card__price">280 ₽</span>
+            </div>
+            <p class="menu-card__desc">Тончайшие ломтики сладких узбекских томатов, сочный ялтинский лук, свежий базилик и пряная восточная заправка.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">Порция: 200 г</span>
+              <span class="menu-card__tag">Свежие овощи</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 7 -->
+        <div class="menu-card" data-category="starters">
+          <div class="menu-card__image-box">
+            <img src="images/lepeshka.svg" alt="Лепешка из тандыра" class="menu-card__img" loading="lazy">
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Лепешка из тандыра</h4>
+              <span class="menu-card__price">120 ₽</span>
+            </div>
+            <p class="menu-card__desc">Пышная горячая узбекская лепешка с золотистой глянцевой корочкой и семенами седаны прямо из огня печи.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">220 г</span>
+              <span class="menu-card__tag">С пылу с жару</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блюдо 8 -->
+        <div class="menu-card" data-category="drinks">
+          <div class="menu-card__image-box">
+            <img src="images/lemonade.svg" alt="Гранатовый фреш-лимонад" class="menu-card__img" loading="lazy">
+          </div>
+          <div class="menu-card__content">
+            <div class="menu-card__header">
+              <h4 class="menu-card__title">Гранатовый фреш</h4>
+              <span class="menu-card__price">290 ₽</span>
+            </div>
+            <p class="menu-card__desc">Свежевыжатый сок спелого граната, веточка мяты, легкие цитрусовые ноты и колотый лед.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__weight">400 мл</span>
+              <span class="menu-card__tag">Освежающий</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REVIEWS ==================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">ОТЗЫВЫ ГОСТЕЙ</span>
+        <h2 class="section-title">Впечатления о ресторане «Ташкент»</h2>
+        <p class="section-subtitle">Мы ценим каждый визит и создаем атмосферу истинного гостеприимства</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Самый вкусный Чайханский плов в городе! Мясо нежнейшее, рис рассыпчатый, порции очень щедрые. Интерьер стильный и уютный, обязательно вернемся всей семьей.»</p>
+          <div class="review-author-box">
+            <div class="review-avatar">АВ</div>
+            <div>
+              <div class="review-name">Александр Воронов</div>
+              <div class="review-date">Постоянный гость</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Отмечали семейный праздник в ресторане. Подача шах-плова и свежеиспеченной самсы впечатлила всех! Обслуживание внимательное и деликатное.»</p>
+          <div class="review-author-box">
+            <div class="review-avatar">ГМ</div>
+            <div>
+              <div class="review-name">Гульнара Мамедова</div>
+              <div class="review-date">Семейный ужин</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Невероятная атмосфера вечера: теплый свет, аромат шашлыка на углях и потрясающий чай с чабрецом. Лучшее место для душевных посиделок с друзьями.»</p>
+          <div class="review-author-box">
+            <div class="review-avatar">ДС</div>
+            <div>
+              <div class="review-name">Денис Смирнов</div>
+              <div class="review-date">Гость ресторана</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACTS & LOCATION ==================== -->
+  <section class="contacts-section" id="contacts">
+    <div class="container">
+      <div class="contacts-wrapper">
+        <div class="contacts-left">
+          <span class="section-tag">КОНТАКТЫ & РАСПОЛОЖЕНИЕ</span>
+          <h2 class="section-title">Ждем вас в гостях</h2>
+          <p class="contacts-desc">Ресторан «Ташкент» открыт для вас ежедневно. Забронируйте столик заранее, чтобы мы подготовили для вас лучшее место:</p>
+
+          <div class="contacts-info-card">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div>
+                <div class="info-item-title">Адрес</div>
+                <div class="info-item-value">Садовая ул., 25Б, село Косулино</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">📞</span>
+              <div>
+                <div class="info-item-title">Телефон</div>
+                <a href="tel:+79126389363" class="info-item-link">+7 (912) 638-93-63</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">⏰</span>
+              <div>
+                <div class="info-item-title">Режим работы</div>
+                <div class="info-item-value">Ежедневно: с 10:00 до 00:00</div>
+              </div>
+            </div>
+
+            <div class="contacts-action-box">
+              <button class="btn btn_gold btn-book" type="button">
+                Забронировать столик<span class="gold-shimmer"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts-right">
+          <div class="map-card-wrapper">
+            <div class="map-ambient-view">
+              <div class="map-grid-pattern"></div>
+              <div class="map-pin">
+                <div class="pin-halo"></div>
+                <div class="pin-symbol">📍</div>
+                <div class="pin-badge">Ресторан «Ташкент»</div>
+              </div>
+              <div class="map-foot-card">
+                <span>Садовая ул., 25Б, с. Косулино</span>
+                <a href="https://yandex.ru/maps/?text=Садовая+ул.,+25Б,+село+Косулино" target="_blank" rel="noopener" class="map-yandex-link">Открыть на Яндекс.Картах &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">ТАШКЕНТ</div>
+          <div class="footer-tagline">РЕСТОРАН ВОСТОЧНОЙ КУХНИ & ЛАУНДЖ</div>
+          <p class="footer-about">Сохраняем старинные традиции приготовления восточных блюд на живом огне в атмосфере современного лаунджа.</p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-col-title">Навигация</div>
+          <ul class="footer-nav-list">
+            <li><a href="#about">О ресторане</a></li>
+            <li><a href="#menu">Меню кухни</a></li>
+            <li><a href="#reviews">Отзывы гостей</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contacts">
+          <div class="footer-col-title">Контакты</div>
+          <p class="footer-contact-item">Садовая ул., 25Б, село Косулино</p>
+          <p class="footer-contact-item">
+            <a href="tel:+79126389363" class="footer-phone">+7 (912) 638-93-63</a>
+          </p>
+          <p class="footer-contact-item">Ежедневно с 10:00 до 00:00</p>
+          <button class="btn btn_outline btn_footer btn-book" type="button">Забронировать стол</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Ресторан «Ташкент». Все права защищены.</div>
+        <div>Информация на сайте носит ознакомительный характер.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOOKING TABLE MODAL ==================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" id="bookingModalClose" type="button" aria-label="Закрыть">&times;</button>
+      <div class="modal-header-box">
+        <span class="modal-badge">БРОНИРОВАНИЕ</span>
+        <h3 class="modal-title">Забронировать столик</h3>
+        <p class="modal-subtitle">Ресторан «Ташкент» с радостью подготовит лучший стол к вашему визиту</p>
+      </div>
+
+      <form class="modal-form" id="bookingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookName">Ваше имя *</label>
+            <input type="text" id="bookName" required placeholder="Иван">
+          </div>
+          <div class="form-group">
+            <label for="bookPhone">Номер телефона *</label>
+            <input type="tel" id="bookPhone" required placeholder="+7 (999) 000-00-00">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookGuests">Количество персон</label>
+            <select id="bookGuests">
+              <option value="1 персона">1 персона</option>
+              <option value="2 персоны" selected>2 персоны (романтический ужин)</option>
+              <option value="3–4 персоны">3–4 персоны (семья / друзья)</option>
+              <option value="5–8 персон">5–8 персон (компания)</option>
+              <option value="8+ персон">Компания более 8 персон</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bookDate">Дата визита *</label>
+            <input type="date" id="bookDate" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bookTime">Время визита *</label>
+          <input type="time" id="bookTime" required value="19:00">
+        </div>
+
+        <div class="form-group">
+          <label for="bookComment">Пожелания к столику</label>
+          <input type="text" id="bookComment" placeholder="У окна, детский стульчик, тихий угол">
+        </div>
+
+        <button type="submit" class="btn btn_gold form-submit-btn">
+          Подтвердить бронирование<span class="gold-shimmer"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

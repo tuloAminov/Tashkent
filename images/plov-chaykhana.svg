@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgChaykhana" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#3d2616"/>
+      <stop offset="100%" stop-color="#1c130c"/>
+    </radialGradient>
+    <radialGradient id="dishGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#0284c7"/>
+      <stop offset="90%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </radialGradient>
+    <radialGradient id="riceGrad" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="60%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </radialGradient>
+    <linearGradient id="meatPiece" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#701a31"/>
+      <stop offset="100%" stop-color="#3e0713"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgChaykhana)"/>
+  
+  <!-- Subtle warm backdrop circle -->
+  <circle cx="250" cy="190" r="140" fill="#f59e0b" opacity="0.15"/>
+
+  <!-- Platter Plate -->
+  <g filter="url(#cardShadow)">
+    <ellipse cx="250" cy="200" rx="195" ry="95" fill="url(#dishGrad)"/>
+    <!-- Eastern pattern rim ring -->
+    <ellipse cx="250" cy="200" rx="180" ry="86" fill="#f8fafc" stroke="#38bdf8" stroke-width="2.5"/>
+    <ellipse cx="250" cy="200" rx="160" ry="76" fill="#fffbeb"/>
+  </g>
+
+  <!-- Plov mound -->
+  <ellipse cx="250" cy="195" rx="145" ry="62" fill="url(#riceGrad)"/>
+
+  <!-- Rice textures and yellow carrots -->
+  <g fill="#fef08a" opacity="0.85">
+    <ellipse cx="220" cy="185" rx="7" ry="2.5" transform="rotate(20 220 185)"/>
+    <ellipse cx="270" cy="180" rx="7" ry="2.5" transform="rotate(-15 270 180)"/>
+    <ellipse cx="240" cy="205" rx="7" ry="2.5" transform="rotate(45 240 205)"/>
+    <ellipse cx="290" cy="200" rx="7" ry="2.5" transform="rotate(-30 290 200)"/>
+    <ellipse cx="190" cy="195" rx="7" ry="2.5" transform="rotate(10 190 195)"/>
+    <ellipse cx="310" cy="190" rx="7" ry="2.5" transform="rotate(-20 310 190)"/>
+  </g>
+  <g stroke="#ea580c" stroke-width="3" stroke-linecap="round">
+    <path d="M190 200 Q205 198 220 203"/>
+    <path d="M260 195 Q278 190 295 197"/>
+    <path d="M225 210 Q240 215 255 208"/>
+    <path d="M280 208 Q298 212 312 205"/>
+  </g>
+
+  <!-- Zira & Barberry seeds -->
+  <g fill="#450a0a">
+    <circle cx="215" cy="190" r="3"/>
+    <circle cx="285" cy="195" r="3.5"/>
+    <circle cx="245" cy="215" r="3"/>
+    <circle cx="305" cy="202" r="3.5"/>
+    <circle cx="185" cy="205" r="3"/>
+  </g>
+
+  <!-- Lamb meat chunks -->
+  <g filter="url(#cardShadow)">
+    <path d="M210 165 C200 155 225 140 250 150 C275 160 270 180 255 185 C240 190 215 175 210 165 Z" fill="url(#meatPiece)"/>
+    <path d="M265 165 C255 155 285 145 305 158 C320 170 310 185 295 188 C280 190 270 175 265 165 Z" fill="url(#meatPiece)"/>
+    <path d="M185 175 C175 165 200 155 215 165 C225 175 220 188 208 190 C195 192 188 182 185 175 Z" fill="url(#meatPiece)"/>
+  </g>
+
+  <!-- Garlic in the middle -->
+  <ellipse cx="250" cy="150" rx="17" ry="16" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+  <path d="M250 134 C245 142 242 154 246 166" stroke="#ca8a04" stroke-width="1.5" fill="none"/>
+  <path d="M250 134 C255 142 258 154 254 166" stroke="#ca8a04" stroke-width="1.5" fill="none"/>
+  <path d="M250 134 L250 130" stroke="#854d0e" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Red chili pepper -->
+  <path d="M280 180 Q310 175 330 190 Q305 188 280 183 Z" fill="#ef4444"/>
+
+  <!-- Steam -->
+  <path d="M230 120 Q215 95 235 70" stroke="#fef3c7" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M250 110 Q265 85 245 60" stroke="#fef3c7" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <path d="M275 120 Q290 95 270 70" stroke="#fef3c7" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+</svg>

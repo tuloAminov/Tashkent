@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgFergana" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#342018"/>
+      <stop offset="100%" stop-color="#140b08"/>
+    </radialGradient>
+    <radialGradient id="riceDevzira" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </radialGradient>
+    <linearGradient id="eggGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgFergana)"/>
+
+  <!-- Backdrop glow -->
+  <circle cx="250" cy="190" r="140" fill="#ea580c" opacity="0.12"/>
+
+  <!-- Blue ceramic lagan -->
+  <ellipse cx="250" cy="205" rx="195" ry="90" fill="#0369a1"/>
+  <ellipse cx="250" cy="203" rx="180" ry="80" fill="#f8fafc" stroke="#0ea5e9" stroke-width="2.5"/>
+  <ellipse cx="250" cy="200" rx="160" ry="70" fill="#fffbeb"/>
+
+  <!-- Dark Devzira rice hill -->
+  <ellipse cx="250" cy="198" rx="142" ry="58" fill="url(#riceDevzira)"/>
+
+  <!-- Devzira reddish rice grains -->
+  <g fill="#d97706" opacity="0.85">
+    <ellipse cx="220" cy="188" rx="6.5" ry="2.5" transform="rotate(20 220 188)"/>
+    <ellipse cx="270" cy="184" rx="6.5" ry="2.5" transform="rotate(-15 270 184)"/>
+    <ellipse cx="240" cy="208" rx="6.5" ry="2.5" transform="rotate(45 240 208)"/>
+    <ellipse cx="290" cy="204" rx="6.5" ry="2.5" transform="rotate(-30 290 204)"/>
+    <ellipse cx="190" cy="198" rx="6.5" ry="2.5" transform="rotate(10 190 198)"/>
+    <ellipse cx="310" cy="194" rx="6.5" ry="2.5" transform="rotate(-20 310 194)"/>
+  </g>
+
+  <!-- Roasted meat chunks -->
+  <path d="M215 162 C200 150 235 140 260 150 C280 160 270 180 250 182 C230 185 215 172 215 162 Z" fill="#4c0519"/>
+  <path d="M265 160 C250 148 290 140 310 155 C325 168 315 185 295 186 C280 188 270 172 265 160 Z" fill="#4c0519"/>
+
+  <!-- Yellow carrot slices -->
+  <g stroke="#f97316" stroke-width="3.5" stroke-linecap="round">
+    <path d="M190 200 Q210 196 225 204"/>
+    <path d="M265 195 Q285 190 305 198"/>
+    <path d="M225 214 Q245 218 265 210"/>
+  </g>
+
+  <!-- Quail eggs (Перепелиные яйца со специями) -->
+  <g>
+    <!-- Egg 1 (halved showing yolk) -->
+    <ellipse cx="180" cy="180" rx="12" ry="15" fill="url(#eggGrad)" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="180" cy="180" r="7" fill="#f59e0b"/>
+    <circle cx="180" cy="180" r="1.5" fill="#ca8a04"/>
+    <!-- Egg 2 (whole) -->
+    <ellipse cx="320" cy="182" rx="11" ry="14" fill="url(#eggGrad)" stroke="#cbd5e1" stroke-width="1"/>
+    <!-- Egg speckled spots -->
+    <circle cx="318" cy="178" r="1.2" fill="#78350f"/>
+    <circle cx="323" cy="183" r="1.5" fill="#78350f"/>
+    <circle cx="317" cy="186" r="1" fill="#78350f"/>
+    <!-- Egg 3 (halved) -->
+    <ellipse cx="250" cy="148" rx="11" ry="13" fill="url(#eggGrad)"/>
+    <circle cx="250" cy="148" r="6" fill="#f59e0b"/>
+  </g>
+
+  <!-- Red hot chili pepper -->
+  <path d="M275 175 Q315 170 335 185 Q305 183 275 179 Z" fill="#dc2626"/>
+  <path d="M275 175 L270 172" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Whole garlic top -->
+  <ellipse cx="215" cy="155" rx="14" ry="13" fill="#fef08a" stroke="#ca8a04" stroke-width="1.2"/>
+  <path d="M215 142 L215 138" stroke="#854d0e" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Steam -->
+  <path d="M245 110 Q230 80 250 50" stroke="#fef3c7" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.65"/>
+</svg>

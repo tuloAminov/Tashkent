@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="heroDarkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#451a03" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1c1917" stop-opacity="0.95"/>
+    </radialGradient>
+    <radialGradient id="laganRim" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#0284c7"/>
+      <stop offset="85%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </radialGradient>
+    <radialGradient id="laganCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="80%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </radialGradient>
+    <radialGradient id="plovMound" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="45%" stop-color="#d97706"/>
+      <stop offset="85%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </radialGradient>
+    <linearGradient id="meatGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="50%" stop-color="#4c0519"/>
+      <stop offset="100%" stop-color="#2a040e"/>
+    </linearGradient>
+    <linearGradient id="garlicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef9c3"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Dark atmospheric background -->
+  <rect width="800" height="500" fill="url(#heroDarkGlow)"/>
+
+  <!-- Warm background glow -->
+  <circle cx="400" cy="270" r="260" fill="#f59e0b" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Platter Shadow & Base -->
+  <g filter="url(#shadowFilter)">
+    <!-- Lagan outer border (Rishtan ceramic blue) -->
+    <ellipse cx="400" cy="285" rx="310" ry="145" fill="url(#laganRim)"/>
+    <!-- Ceramic decorative ring -->
+    <ellipse cx="400" cy="285" rx="290" ry="133" fill="#0284c7" stroke="#38bdf8" stroke-width="3" stroke-dasharray="10 8"/>
+    <!-- Lagan interior glazed porcelain -->
+    <ellipse cx="400" cy="285" rx="270" ry="120" fill="url(#laganCenter)"/>
+    <!-- Eastern ornament rings on rim -->
+    <ellipse cx="400" cy="285" rx="250" ry="110" fill="none" stroke="#0284c7" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Plov Hill / Mound -->
+  <ellipse cx="400" cy="275" rx="230" ry="98" fill="url(#plovMound)"/>
+  
+  <!-- Texture of rice grains and carrots -->
+  <g fill="#fef08a" opacity="0.8">
+    <ellipse cx="360" cy="260" rx="9" ry="3.5" transform="rotate(25 360 260)"/>
+    <ellipse cx="430" cy="255" rx="10" ry="3" transform="rotate(-15 430 255)"/>
+    <ellipse cx="390" cy="280" rx="9" ry="4" transform="rotate(40 390 280)"/>
+    <ellipse cx="450" cy="285" rx="8" ry="3.5" transform="rotate(-30 450 285)"/>
+    <ellipse cx="320" cy="270" rx="9" ry="3.5" transform="rotate(10 320 270)"/>
+    <ellipse cx="480" cy="270" rx="10" ry="4" transform="rotate(-20 480 270)"/>
+    <ellipse cx="340" cy="295" rx="8" ry="3" transform="rotate(50 340 295)"/>
+    <ellipse cx="420" cy="305" rx="9" ry="3.5" transform="rotate(-10 420 305)"/>
+    <ellipse cx="380" cy="240" rx="8" ry="3" transform="rotate(15 380 240)"/>
+    <ellipse cx="460" cy="245" rx="9" ry="3" transform="rotate(-35 460 245)"/>
+  </g>
+
+  <!-- Yellow carrot strips (Sariq sabzi) -->
+  <g stroke="#f97316" stroke-width="4.5" stroke-linecap="round" opacity="0.9">
+    <path d="M310 280 Q330 275 350 282"/>
+    <path d="M430 270 Q450 265 470 274"/>
+    <path d="M370 295 Q395 300 420 292"/>
+    <path d="M460 290 Q485 295 505 285"/>
+    <path d="M290 290 Q310 295 325 288"/>
+    <path d="M380 250 Q400 245 420 252"/>
+  </g>
+
+  <!-- Barberries (Зирк) -->
+  <g fill="#7f1d1d">
+    <circle cx="345" cy="265" r="4.5"/>
+    <circle cx="440" cy="275" r="4"/>
+    <circle cx="385" cy="290" r="5"/>
+    <circle cx="475" cy="280" r="4.5"/>
+    <circle cx="315" cy="280" r="4"/>
+    <circle cx="425" cy="245" r="4.5"/>
+    <circle cx="365" cy="248" r="4"/>
+  </g>
+
+  <!-- Roasted meat chunks (Баранина и говядина) -->
+  <g filter="url(#shadowFilter)">
+    <!-- Main center meat pieces -->
+    <path d="M350 230 C335 220 370 200 405 210 C440 220 445 245 425 255 C405 265 365 240 350 230 Z" fill="url(#meatGrad)"/>
+    <!-- Left juicy meat chunk -->
+    <path d="M295 245 C280 235 315 220 340 230 C360 240 350 260 330 268 C310 272 300 255 295 245 Z" fill="url(#meatGrad)"/>
+    <!-- Right juicy meat chunk -->
+    <path d="M440 235 C430 220 470 215 495 230 C515 242 500 265 475 265 C455 265 445 245 440 235 Z" fill="url(#meatGrad)"/>
+    <!-- Meat glazes and cuts -->
+    <path d="M365 218 Q395 222 415 228" stroke="#f43f5e" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M305 236 Q325 232 340 240" stroke="#f43f5e" stroke-width="2.5" fill="none" opacity="0.6"/>
+    <path d="M455 228 Q475 230 490 238" stroke="#f43f5e" stroke-width="2.5" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Whole roasted Garlic head in the center -->
+  <g filter="url(#shadowFilter)">
+    <ellipse cx="400" cy="210" rx="26" ry="24" fill="url(#garlicGrad)"/>
+    <!-- Garlic cloves indentations -->
+    <path d="M400 188 C392 195 388 215 392 232" stroke="#854d0e" stroke-width="2" fill="none"/>
+    <path d="M400 188 C408 195 412 215 408 232" stroke="#854d0e" stroke-width="2" fill="none"/>
+    <path d="M400 188 L400 234" stroke="#854d0e" stroke-width="2" fill="none"/>
+    <!-- Garlic stem tip -->
+    <path d="M397 188 Q400 178 403 188" stroke="#713f12" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Red Hot Chili Pepper -->
+  <g filter="url(#shadowFilter)">
+    <path d="M440 250 Q485 245 520 265 Q485 260 440 256 Z" fill="#dc2626"/>
+    <path d="M440 250 C436 248 438 244 435 242" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Aromatic rising steam -->
+  <g opacity="0.75" stroke="#fef3c7" stroke-linecap="round" fill="none">
+    <path d="M360 180 Q340 140 370 100 Q400 60 380 30" stroke-width="4.5" opacity="0.5"/>
+    <path d="M400 160 Q425 120 395 80 Q370 40 405 15" stroke-width="6" opacity="0.75"/>
+    <path d="M445 180 Q475 135 440 95 Q410 55 435 25" stroke-width="4.5" opacity="0.5"/>
+  </g>
+</svg>

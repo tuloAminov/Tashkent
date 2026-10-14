@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgShah" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#3b261b"/>
+      <stop offset="100%" stop-color="#19100a"/>
+    </radialGradient>
+    <radialGradient id="crustGolden" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="70%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </radialGradient>
+    <linearGradient id="crustFlakes" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgShah)"/>
+
+  <!-- Glow -->
+  <circle cx="250" cy="180" r="140" fill="#f59e0b" opacity="0.15"/>
+
+  <!-- Platter -->
+  <ellipse cx="250" cy="225" rx="190" ry="75" fill="#1e293b"/>
+  <ellipse cx="250" cy="222" rx="175" ry="68" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <ellipse cx="250" cy="220" rx="155" ry="58" fill="#f8fafc"/>
+
+  <!-- Shah-plov Crown (Golden crisp baked lavash dome) -->
+  <!-- Base dome -->
+  <path d="M140 220 C130 145 190 100 250 95 C310 100 370 145 360 220 C360 250 140 250 140 220 Z" fill="url(#crustGolden)"/>
+
+  <!-- Lavash strips / petal pleats woven pattern -->
+  <path d="M250 95 Q220 160 170 230" stroke="#b45309" stroke-width="3.5" fill="none" opacity="0.7"/>
+  <path d="M250 95 Q240 160 210 238" stroke="#b45309" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M250 95 Q260 160 290 238" stroke="#b45309" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M250 95 Q280 160 330 230" stroke="#b45309" stroke-width="3.5" fill="none" opacity="0.7"/>
+  <path d="M250 95 L250 240" stroke="#78350f" stroke-width="2.5" fill="none" opacity="0.5"/>
+
+  <!-- Opened wedge/slice revealing rich plov filling inside -->
+  <path d="M220 135 L280 135 L305 210 L195 210 Z" fill="#78350f"/>
+  <path d="M222 137 L278 137 L303 208 L197 208 Z" fill="#b45309"/>
+
+  <!-- Visible filling: saffron rice, lamb chunks, chestnuts & dried apricots -->
+  <g fill="#fef08a">
+    <ellipse cx="235" cy="180" rx="6" ry="2.5" transform="rotate(25 235 180)"/>
+    <ellipse cx="265" cy="175" rx="6" ry="2.5" transform="rotate(-15 265 175)"/>
+    <ellipse cx="245" cy="195" rx="6" ry="2.5" transform="rotate(40 245 195)"/>
+  </g>
+  <!-- Dried apricots (Курага) & Chestnuts -->
+  <circle cx="235" cy="160" r="8" fill="#ea580c"/>
+  <circle cx="265" cy="162" r="7.5" fill="#9a3412"/>
+  <circle cx="250" cy="180" r="9" fill="#701a75"/>
+  <circle cx="225" cy="195" r="7" fill="#b45309"/>
+  <!-- Barberry & Raisins -->
+  <circle cx="250" cy="195" r="3.5" fill="#450a0a"/>
+  <circle cx="275" cy="192" r="3.5" fill="#450a0a"/>
+
+  <!-- Sesame & Nigella seeds on crust -->
+  <g fill="#451a03">
+    <circle cx="190" cy="165" r="1.8"/>
+    <circle cx="205" cy="140" r="2"/>
+    <circle cx="295" cy="140" r="1.8"/>
+    <circle cx="310" cy="165" r="2"/>
+    <circle cx="325" cy="195" r="1.8"/>
+    <circle cx="175" cy="195" r="2"/>
+  </g>
+
+  <!-- Pomegranate seeds decor around platter -->
+  <g fill="#be123c">
+    <circle cx="160" cy="225" r="4.5"/>
+    <circle cx="170" cy="228" r="4"/>
+    <circle cx="330" cy="225" r="4.5"/>
+    <circle cx="340" cy="228" r="4"/>
+  </g>
+
+  <!-- Steam rising from center opening -->
+  <path d="M250 110 Q235 75 255 45" stroke="#fef3c7" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgTea" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2c2824"/>
+      <stop offset="100%" stop-color="#12100e"/>
+    </radialGradient>
+    <linearGradient id="teapotBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="70%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <radialGradient id="teaLiquid" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="60%" stop-color="#ca8a04"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgTea)"/>
+
+  <!-- Warm background glow -->
+  <circle cx="230" cy="180" r="140" fill="#f59e0b" opacity="0.1"/>
+
+  <!-- Wooden chaikhana tray -->
+  <ellipse cx="250" cy="245" rx="210" ry="70" fill="#451a03" stroke="#78350f" stroke-width="3"/>
+  <ellipse cx="250" cy="243" rx="195" ry="62" fill="#291102"/>
+
+  <!-- --- TEAPOT (Чайник с национальным узором Пахта) --- -->
+  <g>
+    <!-- Teapot shadow -->
+    <ellipse cx="200" cy="240" rx="75" ry="22" fill="#000000" opacity="0.4"/>
+
+    <!-- Handle -->
+    <path d="M125 140 C90 140 90 215 135 220" stroke="#0284c7" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M125 140 C94 140 94 215 135 220" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+    <!-- Body -->
+    <ellipse cx="205" cy="185" rx="75" ry="60" fill="url(#teapotBody)"/>
+
+    <!-- Spout (Носик) -->
+    <path d="M260 195 C285 195 305 160 300 135 C295 132 288 135 285 142 C275 162 260 172 245 178 Z" fill="url(#teapotBody)"/>
+
+    <!-- Cotton Flower (Пахта) Ornament in white/gold on teapot -->
+    <circle cx="195" cy="185" r="14" fill="#ffffff" opacity="0.9"/>
+    <circle cx="195" cy="185" r="6" fill="#facc15"/>
+    <ellipse cx="178" cy="185" rx="9" ry="5" fill="#ffffff" opacity="0.9"/>
+    <ellipse cx="212" cy="185" rx="9" ry="5" fill="#ffffff" opacity="0.9"/>
+    <ellipse cx="195" cy="168" rx="5" ry="9" fill="#ffffff" opacity="0.9"/>
+    <ellipse cx="195" cy="202" rx="5" ry="9" fill="#ffffff" opacity="0.9"/>
+
+    <!-- Teapot Rim & Lid -->
+    <ellipse cx="200" cy="130" rx="36" ry="10" fill="#0284c7"/>
+    <ellipse cx="200" cy="126" rx="30" ry="8" fill="#38bdf8"/>
+    <path d="M185 125 C185 110 215 110 215 125 Z" fill="#0284c7"/>
+    <!-- Lid knob -->
+    <circle cx="200" cy="108" r="7" fill="#facc15"/>
+  </g>
+
+  <!-- --- PIALA BOWL (Пиала с чаем) --- -->
+  <g>
+    <!-- Piala shadow -->
+    <ellipse cx="360" cy="245" rx="45" ry="16" fill="#000000" opacity="0.4"/>
+
+    <!-- Piala ceramic body -->
+    <path d="M315 205 C315 245 405 245 405 205 Z" fill="#0284c7"/>
+    <ellipse cx="360" cy="205" rx="45" ry="18" fill="#f8fafc" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Golden/amber tea inside -->
+    <ellipse cx="360" cy="207" rx="38" ry="14" fill="url(#teaLiquid)"/>
+
+    <!-- Mint leaf floating in piala -->
+    <path d="M355 204 C350 198 360 196 368 202 C372 208 362 210 355 204 Z" fill="#22c55e"/>
+    <path d="M355 204 L368 202" stroke="#15803d" stroke-width="1"/>
+
+    <!-- White pattern on piala exterior -->
+    <ellipse cx="360" cy="225" rx="15" ry="7" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- Lemon slice beside piala -->
+  <ellipse cx="305" cy="250" rx="20" ry="12" fill="#eab308" stroke="#facc15" stroke-width="2"/>
+  <ellipse cx="305" cy="250" rx="15" ry="9" fill="#fef08a"/>
+
+  <!-- Rising aromatic tea steam -->
+  <path d="M298 125 Q310 95 295 65 Q280 40 300 15" stroke="#fef3c7" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M360 190 Q375 160 360 130" stroke="#fef3c7" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+</svg>

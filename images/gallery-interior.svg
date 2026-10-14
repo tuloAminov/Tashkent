@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="wallBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d1d15"/>
+      <stop offset="60%" stop-color="#1f140e"/>
+      <stop offset="100%" stop-color="#120c08"/>
+    </linearGradient>
+    <radialGradient id="lanternLight" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="woodCarved" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5a2e12"/>
+      <stop offset="50%" stop-color="#8a471e"/>
+      <stop offset="100%" stop-color="#5a2e12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background room walls -->
+  <rect width="600" height="400" fill="url(#wallBg)"/>
+
+  <!-- Eastern Archway (Восточная стрельчатая арка) in wall -->
+  <path d="M120 400 L120 180 Q300 30 480 180 L480 400 Z" fill="#24160f" stroke="#451a03" stroke-width="4"/>
+  <path d="M140 400 L140 190 Q300 55 460 190 L460 400 Z" fill="#180e0a"/>
+
+  <!-- Suzani / Carpet tapestry on background wall inside arch -->
+  <g transform="translate(180, 110)">
+    <!-- Carpet border -->
+    <rect width="240" height="150" rx="8" fill="#7f1d1d" stroke="#f59e0b" stroke-width="3"/>
+    <rect x="12" y="12" width="216" height="126" rx="4" fill="#991b1b" stroke="#facc15" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <!-- Eastern medallion central rosette -->
+    <circle cx="120" cy="75" r="38" fill="#1e3a8a" stroke="#fbbf24" stroke-width="2.5"/>
+    <circle cx="120" cy="75" r="24" fill="#047857" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="120" cy="75" r="10" fill="#f59e0b"/>
+    <!-- Medallion rays -->
+    <path d="M120 37 L120 113 M82 75 L158 75 M93 48 L147 102 M93 102 L147 48" stroke="#fde047" stroke-width="1.8"/>
+  </g>
+
+  <!-- Carved Wooden Columns on sides (Резные восточные колонны) -->
+  <rect x="40" y="0" width="45" height="400" fill="url(#woodCarved)"/>
+  <rect x="515" y="0" width="45" height="400" fill="url(#woodCarved)"/>
+  <!-- Column capitals & bases -->
+  <rect x="30" y="40" width="65" height="20" rx="4" fill="#9a3412"/>
+  <rect x="505" y="40" width="65" height="20" rx="4" fill="#9a3412"/>
+
+  <!-- Ornate Brass Eastern Hanging Lantern (Восточный светильник) -->
+  <g>
+    <!-- Chain -->
+    <line x1="300" y1="0" x2="300" y2="70" stroke="#ca8a04" stroke-width="3"/>
+    <!-- Lantern Light Glow -->
+    <circle cx="300" cy="115" r="140" fill="url(#lanternLight)"/>
+    <!-- Lantern Body -->
+    <path d="M280 70 L320 70 L335 110 L300 145 L265 110 Z" fill="#ca8a04" stroke="#eab308" stroke-width="2"/>
+    <!-- Glass cutouts -->
+    <polygon points="285,80 315,80 325,105 300,132 275,105" fill="#fef08a" opacity="0.9"/>
+    <!-- Finial drop -->
+    <circle cx="300" cy="152" r="5" fill="#ca8a04"/>
+  </g>
+
+  <!-- Traditional Topchan & Cushions (Топчан, ковры и подушки-курпачи) -->
+  <!-- Topchan wooden bench platform -->
+  <path d="M60 400 L60 300 L540 300 L540 400 Z" fill="#451a03"/>
+  <rect x="50" y="285" width="500" height="25" rx="5" fill="#78350f" stroke="#9a3412" stroke-width="2"/>
+
+  <!-- Colorful Kurpacha mattress overlay -->
+  <rect x="70" y="275" width="460" height="22" rx="6" fill="#be123c" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- Velvet Eastern Pillows / Cushions (Бархатные подушки с узорами) -->
+  <!-- Pillow 1 Left (Emerald Green) -->
+  <path d="M80 270 Q130 220 180 270 Q130 295 80 270 Z" fill="#047857" stroke="#10b981" stroke-width="2"/>
+  <circle cx="130" cy="265" r="6" fill="#facc15"/>
+
+  <!-- Pillow 2 Right (Sapphire Blue) -->
+  <path d="M420 270 Q470 220 520 270 Q470 295 420 270 Z" fill="#1d4ed8" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="470" cy="265" r="6" fill="#facc15"/>
+
+  <!-- Pillow 3 Center (Gold / Burgundy) -->
+  <path d="M160 265 Q210 215 260 265 Q210 290 160 265 Z" fill="#b45309" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="210" cy="260" r="5" fill="#fef08a"/>
+
+  <!-- Low Tea Table (Дастархан) in the middle -->
+  <rect x="230" y="250" width="140" height="40" rx="6" fill="#78350f" stroke="#b45309" stroke-width="2"/>
+  <!-- Teapot & pialas on table -->
+  <ellipse cx="280" cy="245" rx="14" ry="11" fill="#0284c7"/>
+  <circle cx="280" cy="233" r="3" fill="#facc15"/>
+  <ellipse cx="320" cy="248" rx="8" ry="5" fill="#0284c7"/>
+</svg>

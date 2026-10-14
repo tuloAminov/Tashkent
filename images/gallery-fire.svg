@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <radialGradient id="fireBg" cx="50%" cy="60%" r="65%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="45%" stop-color="#271105"/>
+      <stop offset="100%" stop-color="#0f0702"/>
+    </radialGradient>
+    <radialGradient id="fireGlow" cx="50%" cy="75%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ea580c" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kazanIron" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="40%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#fireBg)"/>
+
+  <!-- Hearth brick stove (Очаг) -->
+  <path d="M120 400 L160 250 L440 250 L480 400 Z" fill="#3f2214" stroke="#542e1b" stroke-width="3"/>
+  <ellipse cx="300" cy="250" rx="140" ry="25" fill="#1c0f08"/>
+
+  <!-- Fiery glow from the furnace -->
+  <circle cx="300" cy="300" r="160" fill="url(#fireGlow)"/>
+
+  <!-- Firewood logs (Дрова) in furnace opening -->
+  <g stroke="#291307" stroke-width="2">
+    <ellipse cx="230" cy="335" rx="45" ry="14" fill="#78350f" transform="rotate(25 230 335)"/>
+    <ellipse cx="370" cy="335" rx="45" ry="14" fill="#78350f" transform="rotate(-25 370 335)"/>
+    <ellipse cx="300" cy="350" rx="55" ry="15" fill="#58240a"/>
+  </g>
+
+  <!-- Glowing embers (Угли) -->
+  <g fill="#f97316">
+    <circle cx="280" cy="335" r="7"/>
+    <circle cx="320" cy="330" r="8"/>
+    <circle cx="300" cy="340" r="6"/>
+    <circle cx="260" cy="345" r="5"/>
+    <circle cx="340" cy="345" r="6"/>
+  </g>
+  <g fill="#fef08a">
+    <circle cx="285" cy="335" r="3.5"/>
+    <circle cx="318" cy="330" r="4"/>
+    <circle cx="302" cy="338" r="3"/>
+  </g>
+
+  <!-- Blazing flames (Языки живого пламени) -->
+  <path d="M260 340 Q240 270 280 230 Q300 270 290 320 Z" fill="#ea580c"/>
+  <path d="M270 340 Q260 280 290 245 Q305 280 295 330 Z" fill="#facc15"/>
+  <path d="M300 340 Q325 260 350 240 Q340 290 320 335 Z" fill="#ea580c"/>
+  <path d="M310 335 Q325 275 340 255 Q335 295 320 335 Z" fill="#facc15"/>
+  <path d="M285 330 Q300 240 310 220 Q320 250 315 320 Z" fill="#fef08a"/>
+
+  <!-- Flying golden sparks (Искры) -->
+  <g fill="#fde047">
+    <circle cx="270" cy="210" r="2.5"/>
+    <circle cx="330" cy="205" r="3"/>
+    <circle cx="290" cy="180" r="2"/>
+    <circle cx="315" cy="170" r="2.5"/>
+    <circle cx="260" cy="165" r="1.8"/>
+    <circle cx="345" cy="185" r="2.2"/>
+    <circle cx="280" cy="140" r="2"/>
+    <circle cx="325" cy="130" r="2.4"/>
+    <circle cx="305" cy="110" r="2"/>
+  </g>
+
+  <!-- Heavy Cast-iron Kazan (Большой чугунный казан) -->
+  <path d="M175 190 C175 295 425 295 425 190 Z" fill="url(#kazanIron)"/>
+  <ellipse cx="300" cy="190" rx="125" ry="32" fill="#0f172a" stroke="#64748b" stroke-width="2.5"/>
+  <ellipse cx="300" cy="190" rx="112" ry="26" fill="#1e293b"/>
+
+  <!-- Golden pilaf shimmering inside the kazan -->
+  <ellipse cx="300" cy="193" rx="100" ry="20" fill="#d97706"/>
+  <ellipse cx="300" cy="192" rx="75" ry="14" fill="#fbbf24"/>
+
+  <!-- Kazan thick handles -->
+  <path d="M165 195 C145 195 145 220 168 220" stroke="#475569" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M435 195 C455 195 455 220 432 220" stroke="#475569" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+  <!-- Billowing aromatic steam clouds -->
+  <g stroke="#fef3c7" stroke-linecap="round" fill="none" opacity="0.75">
+    <path d="M260 160 Q235 110 270 70 Q305 30 280 10" stroke-width="5"/>
+    <path d="M300 150 Q330 100 295 60 Q270 25 310 5" stroke-width="6.5"/>
+    <path d="M340 160 Q370 115 335 75 Q305 35 330 10" stroke-width="5"/>
+  </g>
+</svg>

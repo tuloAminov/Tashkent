@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgSalad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2a2e22"/>
+      <stop offset="100%" stop-color="#12150f"/>
+    </radialGradient>
+    <radialGradient id="bowlCeramic" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#0284c7"/>
+      <stop offset="90%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </radialGradient>
+    <linearGradient id="tomatoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="60%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="onionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#f5d0fe"/>
+      <stop offset="100%" stop-color="#a21caf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgSalad)"/>
+
+  <!-- Glow -->
+  <circle cx="250" cy="190" r="140" fill="#22c55e" opacity="0.1"/>
+
+  <!-- Rishtan ceramic salad bowl -->
+  <ellipse cx="250" cy="205" rx="180" ry="85" fill="url(#bowlCeramic)"/>
+  <ellipse cx="250" cy="203" rx="165" ry="75" fill="#f8fafc" stroke="#38bdf8" stroke-width="2"/>
+  <ellipse cx="250" cy="200" rx="145" ry="65" fill="#fffbeb"/>
+
+  <!-- Juicy tomato slices (Ачик-чучук) -->
+  <!-- Tomato slice 1 -->
+  <path d="M160 195 C160 170 210 160 230 180 C240 200 200 215 170 205 Z" fill="url(#tomatoGrad)"/>
+  <ellipse cx="195" cy="188" rx="12" ry="7" fill="#f87171" opacity="0.6"/>
+  <!-- Tomato seeds -->
+  <circle cx="190" cy="188" r="1.5" fill="#fef08a"/>
+  <circle cx="200" cy="186" r="1.5" fill="#fef08a"/>
+
+  <!-- Tomato slice 2 -->
+  <path d="M230 185 C240 160 290 155 310 175 C320 195 280 210 250 200 Z" fill="url(#tomatoGrad)"/>
+  <ellipse cx="270" cy="180" rx="12" ry="6" fill="#f87171" opacity="0.6"/>
+  <circle cx="265" cy="180" r="1.5" fill="#fef08a"/>
+  <circle cx="275" cy="178" r="1.5" fill="#fef08a"/>
+
+  <!-- Tomato slice 3 -->
+  <path d="M200 210 C210 190 260 185 280 205 C290 220 250 235 220 225 Z" fill="url(#tomatoGrad)"/>
+  <ellipse cx="240" cy="210" rx="12" ry="6" fill="#f87171" opacity="0.6"/>
+  <circle cx="235" cy="210" r="1.5" fill="#fef08a"/>
+  <circle cx="245" cy="208" r="1.5" fill="#fef08a"/>
+
+  <!-- Tomato slice 4 -->
+  <path d="M280 200 C290 180 340 180 350 200 C355 215 320 225 295 218 Z" fill="url(#tomatoGrad)"/>
+  <ellipse cx="315" cy="202" rx="10" ry="5" fill="#f87171" opacity="0.6"/>
+
+  <!-- Thin Red/Purple onion rings (Сладкий красный лук кольцами) -->
+  <ellipse cx="220" cy="180" rx="22" ry="10" fill="none" stroke="url(#onionGrad)" stroke-width="2.5" transform="rotate(-15 220 180)"/>
+  <ellipse cx="280" cy="185" rx="25" ry="12" fill="none" stroke="url(#onionGrad)" stroke-width="2.5" transform="rotate(20 280 185)"/>
+  <ellipse cx="240" cy="215" rx="28" ry="11" fill="none" stroke="url(#onionGrad)" stroke-width="2.5" transform="rotate(-5 240 215)"/>
+  <ellipse cx="180" cy="205" rx="20" ry="8" fill="none" stroke="url(#onionGrad)" stroke-width="2.5" transform="rotate(25 180 205)"/>
+
+  <!-- Fresh green basil and cilantro leaves (Свежий базилик / райхон) -->
+  <g fill="#16a34a">
+    <!-- Leaf 1 -->
+    <path d="M210 170 C200 155 215 150 225 160 C235 170 220 180 210 170 Z"/>
+    <!-- Leaf 2 -->
+    <path d="M290 165 C280 150 295 145 305 155 C315 165 300 175 290 165 Z"/>
+    <!-- Leaf 3 -->
+    <path d="M255 195 C245 185 255 175 268 185 C275 195 265 202 255 195 Z"/>
+    <!-- Leaf 4 (purple basil / rayhon) -->
+    <path d="M190 185 C180 175 190 165 200 175 C210 185 198 192 190 185 Z" fill="#6b21a8"/>
+    <path d="M320 185 C312 175 322 168 330 175 C338 185 328 192 320 185 Z" fill="#6b21a8"/>
+  </g>
+
+  <!-- Green chili pepper slices -->
+  <g fill="#22c55e" stroke="#15803d" stroke-width="1.5">
+    <circle cx="215" cy="202" r="4.5"/>
+    <circle cx="270" cy="198" r="4.5"/>
+    <circle cx="300" cy="180" r="4.5"/>
+  </g>
+
+  <!-- Olive oil shimmer and cracked black pepper -->
+  <g fill="#000000" opacity="0.75">
+    <circle cx="230" cy="185" r="1"/>
+    <circle cx="265" cy="182" r="1.2"/>
+    <circle cx="225" cy="205" r="1"/>
+    <circle cx="285" cy="208" r="1.2"/>
+    <circle cx="245" cy="195" r="1"/>
+    <circle cx="310" cy="195" r="1"/>
+  </g>
+</svg>

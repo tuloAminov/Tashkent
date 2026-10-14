@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgLemonade" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#3b1b26"/>
+      <stop offset="100%" stop-color="#14070c"/>
+    </radialGradient>
+    <linearGradient id="pomegranateGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="30%" stop-color="#e11d48"/>
+      <stop offset="70%" stop-color="#be123c"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+    <linearGradient id="glassGlossL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="25%" stop-color="#fda4af" stop-opacity="0.1"/>
+      <stop offset="75%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgLemonade)"/>
+
+  <!-- Glow -->
+  <circle cx="250" cy="180" r="140" fill="#f43f5e" opacity="0.15"/>
+
+  <!-- Table -->
+  <ellipse cx="250" cy="275" rx="200" ry="50" fill="#1e1b2e"/>
+
+  <!-- Glass Shadow -->
+  <ellipse cx="250" cy="270" rx="65" ry="18" fill="#000000" opacity="0.5"/>
+
+  <!-- Drinking straw -->
+  <path d="M230 250 L275 80 L300 50" stroke="#f43f5e" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <path d="M230 250 L275 80 L300 50" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.9"/>
+
+  <!-- Liquid body -->
+  <path d="M205 130 L218 260 C218 270 282 270 282 260 L295 130 Z" fill="url(#pomegranateGrad)"/>
+
+  <!-- Ice cubes inside glass -->
+  <rect x="225" y="160" width="24" height="24" rx="4" fill="#ffffff" stroke="#fecdd3" stroke-width="1.5" opacity="0.4" transform="rotate(20 225 160)"/>
+  <rect x="245" y="195" width="22" height="22" rx="4" fill="#ffffff" stroke="#fecdd3" stroke-width="1.5" opacity="0.4" transform="rotate(-15 245 195)"/>
+
+  <!-- Pomegranate seeds (Рубиновые зерна граната) -->
+  <g fill="#9f1239" stroke="#fda4af" stroke-width="0.8">
+    <circle cx="225" cy="245" r="4.5"/>
+    <circle cx="238" cy="252" r="5"/>
+    <circle cx="255" cy="248" r="4.8"/>
+    <circle cx="270" cy="242" r="4.5"/>
+    <circle cx="245" cy="235" r="4.5"/>
+    <circle cx="260" cy="230" r="4.2"/>
+    <circle cx="230" cy="225" r="4"/>
+    <circle cx="235" cy="190" r="4.5"/>
+    <circle cx="268" cy="180" r="4"/>
+    <circle cx="250" cy="150" r="4.2"/>
+  </g>
+
+  <!-- Carbonation bubbles rising in drink -->
+  <g fill="#ffffff" opacity="0.6">
+    <circle cx="228" cy="150" r="2"/>
+    <circle cx="270" cy="160" r="2.5"/>
+    <circle cx="238" cy="175" r="1.8"/>
+    <circle cx="260" cy="215" r="2"/>
+    <circle cx="242" cy="205" r="2.2"/>
+    <circle cx="275" cy="225" r="1.8"/>
+    <circle cx="225" cy="235" r="1.5"/>
+  </g>
+
+  <!-- Glass overlay with specular shine -->
+  <path d="M200 125 L215 262 C215 273 285 273 285 262 L300 125 Z" fill="url(#glassGlossL)" stroke="#fda4af" stroke-width="2"/>
+  <ellipse cx="250" cy="125" rx="50" ry="12" fill="#ffffff" opacity="0.3"/>
+
+  <!-- Lemon Wheel on Rim (Лимонный кружочек на бокале) -->
+  <g transform="translate(195, 120)">
+    <circle cx="0" cy="0" r="24" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+    <circle cx="0" cy="0" r="20" fill="#fef08a"/>
+    <!-- Lemon segments -->
+    <path d="M0 0 L-14 -10 M0 0 L14 -10 M0 0 L-14 10 M0 0 L14 10 M0 0 L0 -17 M0 0 L0 17" stroke="#ca8a04" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+  </g>
+
+  <!-- Fresh Mint Sprig on Rim -->
+  <g>
+    <path d="M270 120 Q290 95 305 92 Q300 110 282 122 Z" fill="#22c55e"/>
+    <path d="M270 120 Q290 95 305 92" stroke="#15803d" stroke-width="1.5" fill="none"/>
+    <path d="M275 120 Q265 95 250 98 Q255 112 270 122 Z" fill="#16a34a"/>
+  </g>
+</svg>

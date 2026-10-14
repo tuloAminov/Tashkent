@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="logoFlame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+    <linearGradient id="logoKazan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="logoRice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Flame background -->
+  <path d="M50 18 Q58 35 68 40 Q75 45 72 58 Q68 70 50 68 Q32 70 28 58 Q25 45 32 40 Q42 35 50 18 Z" fill="url(#logoFlame)" opacity="0.3"/>
+  <path d="M50 25 Q55 38 62 44 Q66 52 50 65 Q34 52 38 44 Q45 38 50 25 Z" fill="url(#logoFlame)" opacity="0.6"/>
+  <!-- Kazan (Cauldron) -->
+  <path d="M22 46 C22 46 20 74 50 74 C80 74 78 46 78 46 Z" fill="url(#logoKazan)"/>
+  <ellipse cx="50" cy="46" rx="28" ry="7" fill="#1f2937"/>
+  <!-- Pilaf mound inside kazan -->
+  <ellipse cx="50" cy="44" rx="24" ry="5.5" fill="url(#logoRice)"/>
+  <ellipse cx="50" cy="42" rx="16" ry="3.5" fill="#fbbf24"/>
+  <!-- Steam curls -->
+  <path d="M42 36 Q39 28 44 22" stroke="#fef08a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <path d="M50 34 Q53 25 48 17" stroke="#fef08a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.95"/>
+  <path d="M58 36 Q61 28 56 22" stroke="#fef08a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <!-- Kazan Handles -->
+  <path d="M18 48 C15 48 14 54 18 56" stroke="#4b5563" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M82 48 C85 48 86 54 82 56" stroke="#4b5563" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Kazan Stand -->
+  <path d="M36 73 L28 85 M64 73 L72 85 M50 74 L50 86" stroke="#374151" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

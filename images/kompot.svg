@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+  <defs>
+    <radialGradient id="bgKompot" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#3d2218"/>
+      <stop offset="100%" stop-color="#190d07"/>
+    </radialGradient>
+    <linearGradient id="kompotLiquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="40%" stop-color="#c2410c"/>
+      <stop offset="80%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <linearGradient id="glassGloss" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="350" fill="url(#bgKompot)"/>
+
+  <!-- Warm background glow -->
+  <circle cx="250" cy="180" r="140" fill="#ea580c" opacity="0.12"/>
+
+  <!-- Table surface -->
+  <ellipse cx="250" cy="275" rx="210" ry="50" fill="#291102"/>
+
+  <!-- Jug Shadow -->
+  <ellipse cx="210" cy="265" rx="70" ry="20" fill="#000000" opacity="0.45"/>
+  <!-- Glass Shadow -->
+  <ellipse cx="340" cy="268" rx="35" ry="14" fill="#000000" opacity="0.4"/>
+
+  <!-- --- JUG OF COMPOTE (Кувшин) --- -->
+  <!-- Handle -->
+  <path d="M140 145 C100 145 100 220 145 225" stroke="#fed7aa" stroke-width="12" fill="none" opacity="0.5"/>
+  <path d="M140 145 C105 145 105 220 145 225" stroke="#ffffff" stroke-width="5" fill="none" opacity="0.7"/>
+
+  <!-- Jug Liquid Body -->
+  <path d="M175 125 L150 240 C150 258 270 258 270 240 L245 125 Z" fill="url(#kompotLiquid)"/>
+
+  <!-- Dried fruits floating in jug (Урюк, курага, изюм) -->
+  <circle cx="210" cy="225" r="16" fill="#c2410c"/>
+  <circle cx="210" cy="225" r="13" fill="#ea580c"/>
+  <circle cx="180" cy="205" r="12" fill="#78350f"/>
+  <ellipse cx="235" cy="195" rx="10" ry="7" fill="#451a03"/>
+  <ellipse cx="195" cy="165" rx="9" ry="6" fill="#451a03"/>
+
+  <!-- Jug Glass Exterior and Highlights -->
+  <path d="M175 120 L148 240 C148 262 272 262 272 240 L245 120 Z" fill="url(#glassGloss)" stroke="#fed7aa" stroke-width="2" opacity="0.6"/>
+
+  <!-- Jug Rim and Spout -->
+  <ellipse cx="210" cy="120" rx="36" ry="10" fill="#fed7aa" opacity="0.4"/>
+  <path d="M245 120 Q260 115 255 110 Q240 115 235 120" fill="#ffffff" opacity="0.7"/>
+
+  <!-- --- GLASS OF COMPOTE (Стакан) --- -->
+  <!-- Glass Liquid -->
+  <path d="M312 170 L318 255 C318 262 362 262 362 255 L368 170 Z" fill="url(#kompotLiquid)"/>
+  <circle cx="340" cy="235" r="9" fill="#ea580c"/>
+  <circle cx="340" cy="210" r="5" fill="#451a03"/>
+
+  <!-- Glass exterior & reflections -->
+  <path d="M310 165 L317 257 C317 266 363 266 363 257 L370 165 Z" fill="url(#glassGloss)" stroke="#ffffff" stroke-width="1.8" opacity="0.7"/>
+  <ellipse cx="340" cy="165" rx="30" ry="7" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Fresh mint sprig in glass -->
+  <path d="M335 165 Q330 145 320 138" stroke="#15803d" stroke-width="2.5" fill="none"/>
+  <path d="M320 138 C312 130 322 125 330 133 C338 141 328 146 320 138 Z" fill="#22c55e"/>
+
+  <!-- Ice cube in glass -->
+  <rect x="325" y="180" width="16" height="16" rx="3" fill="#ffffff" opacity="0.45" stroke="#ffffff" stroke-width="1"/>
+</svg>
