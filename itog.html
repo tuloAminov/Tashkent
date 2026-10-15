@@ -25,6 +25,10 @@
       --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -333,129 +337,207 @@
       color: #FFF;
     }
 
-    /* CALCULATOR SECTION */
-    .calc-section {
+    /* STAGES & 150K ESTIMATE SECTION */
+    .stages-section {
       background: var(--bg-surface);
       border: 1px solid var(--border-gold);
       border-radius: 20px;
-      padding: 40px;
+      padding: 48px 36px;
       margin: 60px 0;
       position: relative;
-      overflow: hidden;
     }
 
-    .calc-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .calc-header {
+    .stages-header {
       text-align: center;
-      margin-bottom: 34px;
+      margin-bottom: 36px;
     }
 
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 40px;
-      align-items: center;
+    .stages-title {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      margin: 10px 0 8px;
+      color: #FFF;
     }
 
-    .slider-box {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .slider-title {
-      font-size: 14px;
+    .stages-sub {
       color: var(--text-muted);
-      margin-bottom: 12px;
+      font-size: 15px;
+      max-width: 680px;
+      margin: 0 auto;
     }
 
-    .slider-value-display {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--accent-gold-light);
-      margin-bottom: 16px;
-    }
-
-    input[type=range] {
-      width: 100%;
-      height: 8px;
-      background: #2A2724;
-      border-radius: 4px;
-      outline: none;
-      accent-color: var(--accent-gold);
-      cursor: pointer;
-    }
-
-    .slider-scale {
+    .stages-timeline-grid {
       display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    .calc-results-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      flex-direction: column;
       gap: 16px;
+      margin-bottom: 32px;
     }
 
-    .result-card {
+    .stage-card {
       background: var(--bg-card);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 80px 1fr 180px;
+      align-items: center;
+      gap: 24px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .stage-card:hover {
+      border-color: rgba(197, 160, 89, 0.4);
+      transform: translateX(4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .stage-card.highlight {
+      border-color: var(--accent-gold);
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, rgba(20, 19, 18, 0.95) 100%);
+    }
+
+    .stage-num-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
       border-radius: 14px;
-      padding: 20px;
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
     }
 
-    .result-card.loss {
-      border-color: rgba(239, 68, 68, 0.3);
-      background: rgba(239, 68, 68, 0.04);
+    .stage-num-badge .num {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1;
     }
 
-    .result-card.save {
-      border-color: rgba(34, 197, 94, 0.4);
-      background: rgba(34, 197, 94, 0.05);
-      grid-column: span 2;
+    .stage-num-badge .txt {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
     }
 
-    .result-label {
-      font-size: 12px;
-      color: var(--text-muted);
+    .stage-content h4 {
+      font-size: 17px;
+      color: #FFF;
       margin-bottom: 6px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .result-num {
-      font-size: 26px;
-      font-weight: 800;
-    }
-
-    .result-num.loss-text {
-      color: #ef4444;
-    }
-
-    .result-num.save-text {
-      color: #22c55e;
-      font-size: 32px;
-    }
-
-    .result-note {
-      font-size: 12px;
+    .stage-content p {
+      font-size: 13px;
       color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .stage-deliverables {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .stage-deliverable-tag {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #D8D2C5;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .stage-price-box {
+      text-align: right;
+      padding-left: 16px;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stage-cost {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-gold-light);
+      white-space: nowrap;
+    }
+
+    .stage-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .stages-total-banner {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.15) 0%, rgba(20, 19, 18, 0.95) 100%);
+      border: 2px solid var(--accent-gold);
+      border-radius: 16px;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .total-banner-text h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: #FFF;
+      margin-bottom: 4px;
+    }
+
+    .total-banner-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .total-banner-price {
+      text-align: right;
+    }
+
+    .total-grand-number {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--accent-gold-light);
+      line-height: 1;
+    }
+
+    .total-banner-note {
+      font-size: 12px;
+      color: #22c55e;
+      font-weight: 600;
       margin-top: 6px;
+    }
+
+    @media (max-width: 860px) {
+      .stage-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .stage-num-badge {
+        width: 48px;
+        height: 48px;
+      }
+      .stage-price-box {
+        text-align: left;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-left: 0;
+        padding-top: 12px;
+      }
+      .stages-total-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .total-banner-price {
+        text-align: left;
+      }
     }
 
     /* COMPARISON TABLE */
@@ -549,6 +631,264 @@
       flex-wrap: wrap;
     }
 
+    /* DETAILED PLAN SECTION STYLES (VARIANT 2) */
+    .plan-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 48px 36px;
+      margin: 60px 0;
+    }
+
+    .plan-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .plan-title {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      margin: 10px 0;
+      color: #FFF;
+    }
+
+    .plan-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .plan-block-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--accent-gold-light);
+      margin: 36px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-icon {
+      font-size: 26px;
+    }
+
+    .service-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    .service-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .service-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(197, 160, 89, 0.15);
+      color: var(--accent-gold);
+      margin-top: auto;
+    }
+
+    /* Kitchen challenges grid */
+    .challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .challenge-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .challenge-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .challenge-head span:first-child {
+      font-size: 20px;
+    }
+
+    .challenge-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    .challenge-problem {
+      font-size: 12px;
+      color: #ef4444;
+      margin-bottom: 8px;
+      background: rgba(239, 68, 68, 0.08);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border-left: 3px solid #ef4444;
+    }
+
+    .challenge-solution {
+      font-size: 13px;
+      color: #D8D2C5;
+      line-height: 1.5;
+    }
+
+    .challenge-solution strong {
+      color: #22c55e;
+    }
+
+    /* Scenario Timeline */
+    .scenario-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .scenario-step {
+      background: var(--bg-card);
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      border-radius: 14px;
+      padding: 20px 16px;
+      position: relative;
+    }
+
+    .step-num {
+      position: absolute;
+      top: -12px;
+      left: 16px;
+      width: 24px;
+      height: 24px;
+      background: var(--accent-gold);
+      color: #0E0D0C;
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-role {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      margin-top: 4px;
+    }
+
+    .step-action {
+      font-size: 13px;
+      color: #FFF;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Roadmap Timeline */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .roadmap-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 22px;
+      border-top: 3px solid var(--accent-gold);
+    }
+
+    .roadmap-period {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .roadmap-card h4 {
+      font-size: 16px;
+      color: #FFF;
+      margin-bottom: 12px;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .roadmap-list li {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .roadmap-list li strong {
+      color: #D8D2C5;
+    }
+
+    @media (max-width: 992px) {
+      .services-grid, .scenario-steps, .roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .challenges-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid, .scenario-steps, .roadmap-grid {
+        grid-template-columns: 1fr;
+      }
+      .plan-section {
+        padding: 24px 16px;
+      }
+    }
+
     @media (max-width: 992px) {
       .pricing-grid {
         grid-template-columns: 1fr;
@@ -592,8 +932,11 @@
         <a href="index.html" class="btn btn_outline">
           ← Открыть демо-сайт
         </a>
-        <a href="#calc" class="btn btn_gold">
-          Калькулятор выгоды
+        <a href="#plan-v2" class="btn btn_outline">
+          План внедрения (Вариант 2)
+        </a>
+        <a href="#stages-v2" class="btn btn_gold">
+          Смета 150 000 ₽
         </a>
       </div>
     </div>
@@ -619,13 +962,17 @@
         </div>
 
         <div class="card-price-block">
-          <div class="price-value">35 000 – 50 000 <span class="price-unit">₽</span></div>
+          <div class="price-value">40 000 – 50 000 <span class="price-unit">₽</span></div>
           <div class="monthly-cost">
             <span>Расход в месяц:</span> <strong>~400 ₽</strong> (хостинг)
           </div>
         </div>
 
         <ul class="features-list">
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Индивидуальный дизайн в Figma с нуля под стиль заведения</span>
+          </li>
           <li class="feature-item">
             <span class="feature-icon">✓</span>
             <span>Полноэкранный Hero-слайдер залов и блюд</span>
@@ -655,7 +1002,7 @@
         <div class="card-footer-metrics">
           <div class="metric-col">
             <span>Срок запуска:</span>
-            <span>5 – 7 дней</span>
+            <span>10 – 14 дней</span>
           </div>
           <div class="metric-col">
             <span>Касса:</span>
@@ -675,17 +1022,21 @@
         <div class="card-header">
           <span class="card-stage">ВАРИАНТ 2 (ХИТ)</span>
           <h3 class="card-title">Доставка + Telegram-бот</h3>
-          <p class="card-target">Свой сайт доставки с быстрой оплатой по СБП и звуковым ботом для кухни</p>
+          <p class="card-target">Свой сайт доставки с нуля с быстрой оплатой по СБП и звуковым ботом для кухни</p>
         </div>
 
         <div class="card-price-block">
-          <div class="price-value">80 000 – 110 000 <span class="price-unit">₽</span></div>
+          <div class="price-value">120 000 – 150 000 <span class="price-unit">₽</span></div>
           <div class="monthly-cost">
             <span>Расход в месяц:</span> <strong>~2 500 ₽ + 0.7% СБП</strong>
           </div>
         </div>
 
         <ul class="features-list">
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Разработка с нуля «под ключ»:</strong> UI/UX дизайн, верстка, бэкенд и база данных</span>
+          </li>
           <li class="feature-item">
             <span class="feature-icon">✓</span>
             <span><strong>Интерактивная корзина</strong> и переключатель «Доставка / Самовывоз (-10%)»</span>
@@ -715,16 +1066,19 @@
         <div class="card-footer-metrics">
           <div class="metric-col">
             <span>Срок запуска:</span>
-            <span>2 – 3 недели</span>
+            <span>3.5 – 5 недель</span>
           </div>
           <div class="metric-col">
             <span>Окупаемость:</span>
-            <span>~1.5 месяца</span>
+            <span>~1 месяц</span>
           </div>
         </div>
 
         <a href="index.html#menu" class="btn btn_gold" style="justify-content: center;">
           Протестировать корзину в демо →
+        </a>
+        <a href="#plan-v2" class="btn btn_outline" style="margin-top: 8px; justify-content: center; font-size: 12px;">
+          Детальный план внедрения ↓
         </a>
       </div>
 
@@ -733,11 +1087,11 @@
         <div class="card-header">
           <span class="card-stage">ВАРИАНТ 3 (ПРО)</span>
           <h3 class="card-title">Интеграция с кассой</h3>
-          <p class="card-target">Сайт с прямым подключением к кассовой системе iiko / Frontpad / r_keeper</p>
+          <p class="card-target">Сайт с нуля с прямым подключением к кассовой системе iiko / Frontpad / r_keeper</p>
         </div>
 
         <div class="card-price-block">
-          <div class="price-value">150 000 – 190 000 <span class="price-unit">₽</span></div>
+          <div class="price-value">190 000 – 230 000 <span class="price-unit">₽</span></div>
           <div class="monthly-cost">
             <span>Расход в месяц:</span> <strong>~5 000 ₽ + касса</strong>
           </div>
@@ -746,7 +1100,7 @@
         <ul class="features-list">
           <li class="feature-item">
             <span class="feature-icon">✓</span>
-            <span>Все функции Варианта 2 (корзина, СБП, зоны)</span>
+            <span>Все функции Варианта 2 (дизайн с нуля, корзина, СБП, зоны)</span>
           </li>
           <li class="feature-item">
             <span class="feature-icon">✓</span>
@@ -769,7 +1123,7 @@
         <div class="card-footer-metrics">
           <div class="metric-col">
             <span>Срок запуска:</span>
-            <span>3 – 5 недель</span>
+            <span>5 – 7 недель</span>
           </div>
           <div class="metric-col">
             <span>Требуется:</span>
@@ -784,53 +1138,299 @@
 
     </section>
 
-    <!-- ==================== INTERACTIVE SAVINGS CALCULATOR ==================== -->
-    <section class="calc-section" id="calc">
-      <div class="calc-header">
-        <span class="tag-badge">ЭКОНОМИКА В ЦИФРАХ</span>
-        <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 8px;">Калькулятор экономии: Свой сайт vs Яндекс Еда</h2>
-        <p style="color: var(--text-muted); font-size: 14px;">Посмотрите, сколько чистой прибыли кафе теряет на комиссии агрегатора 35% и как быстро окупается свой сайт</p>
+    <!-- ==================== DETAILED 150K ESTIMATE (VARIANT 2) ==================== -->
+    <section class="stages-section" id="stages-v2">
+      <div class="stages-header">
+        <span class="tag-badge">ПРОЗРАЧНАЯ СМЕТА: ВАРИАНТ 2</span>
+        <h2 class="stages-title">Этапы разработки доставки с нуля (150 000 ₽)</h2>
+        <p class="stages-sub">За что конкретно вы платите: пошаговое разделение бюджета 150 000 ₽ по 5 этапам с прозрачным результатом на каждом шаге. Возможна поэтапная оплата по факту готовности.</p>
       </div>
 
-      <div class="calc-grid">
-        <div class="slider-box">
-          <div class="slider-title">Выручка доставки кафе в месяц:</div>
-          <div class="slider-value-display" id="turnoverDisplay">500 000 ₽</div>
-          <input type="range" id="turnoverSlider" min="100000" max="2000000" step="50000" value="500000">
-          <div class="slider-scale">
-            <span>100 тыс. ₽</span>
-            <span>1 млн ₽</span>
-            <span>2 млн ₽</span>
+      <div class="stages-timeline-grid">
+        <!-- Этап 1 -->
+        <div class="stage-card">
+          <div class="stage-num-badge">
+            <span class="num">01</span>
+            <span class="txt">Этап</span>
           </div>
-          <p style="font-size: 12px; color: var(--text-muted); margin-top: 14px;">
-            💡 Передвигайте ползунок, чтобы увидеть расчет для вашего объема заказов.
-          </p>
+          <div class="stage-content">
+            <h4>🎨 UI/UX Дизайн в Figma с нуля (Mobile-First)</h4>
+            <p>Индивидуальная отрисовка всех экранов под восточный стиль ресторана «Ташкент». Никаких шаблонов — адаптивный визуал для смартфонов, планшетов и компьютеров.</p>
+            <div class="stage-deliverables">
+              <span class="stage-deliverable-tag">Главный экран & Hero</span>
+              <span class="stage-deliverable-tag">Карточки блюд и соусов</span>
+              <span class="stage-deliverable-tag">Выдвижная корзина</span>
+              <span class="stage-deliverable-tag">Экран оформления и СБП</span>
+            </div>
+          </div>
+          <div class="stage-price-box">
+            <div class="stage-cost">20 000 ₽</div>
+            <div class="stage-time">Срок: ~5–7 дней</div>
+          </div>
         </div>
 
-        <div class="calc-results-box">
-          <div class="result-card loss">
-            <div class="result-label">
-              <span>⚠️ Комиссия Яндекс Еды (35%):</span>
-            </div>
-            <div class="result-num loss-text" id="yandexLoss">-175 000 ₽</div>
-            <div class="result-note">Уходит сервису каждый месяц навсегда</div>
+        <!-- Этап 2 -->
+        <div class="stage-card highlight">
+          <div class="stage-num-badge">
+            <span class="num">02</span>
+            <span class="txt">Этап</span>
           </div>
+          <div class="stage-content">
+            <h4>💻 Фронтенд-разработка и клиентская витрина</h4>
+            <p>Чистая, быстрая верстка интерфейса. Интерактивная корзина в реальном времени, карточки с добавлением блюд [− 1 +], переключатель «Доставка / Самовывоз (-10%)» и плавающая мобильная шторка.</p>
+            <div class="stage-deliverables">
+              <span class="stage-deliverable-tag">Каталог с категориями</span>
+              <span class="stage-deliverable-tag">Умная корзина</span>
+              <span class="stage-deliverable-tag">Плавающая плашка для телефонов</span>
+              <span class="stage-deliverable-tag">Анимации интерфейса</span>
+            </div>
+          </div>
+          <div class="stage-price-box">
+            <div class="stage-cost">35 000 ₽</div>
+            <div class="stage-time">Срок: ~7–10 дней</div>
+          </div>
+        </div>
 
-          <div class="result-card">
-            <div class="result-label">
-              <span>💳 Расходы своего сайта (СБП 0.7%):</span>
-            </div>
-            <div class="result-num" style="color: #FFF;" id="ownSiteCost">-3 500 ₽</div>
-            <div class="result-note">Комиссия банку + хостинг сервера</div>
+        <!-- Этап 3 -->
+        <div class="stage-card">
+          <div class="stage-num-badge">
+            <span class="num">03</span>
+            <span class="txt">Этап</span>
           </div>
+          <div class="stage-content">
+            <h4>⚙️ Бэкенд, База данных и Зоны доставки (Яндекс.Карты)</h4>
+            <p>Серверное ядро системы. Хранение заказов, безопасность, привязка Яндекс.Карт с автодополнением адресов по Косулино и Екб, автоматический расчет стоимости доставки по полигонам.</p>
+            <div class="stage-deliverables">
+              <span class="stage-deliverable-tag">База данных заказов</span>
+              <span class="stage-deliverable-tag">API зон доставки (Яндекс)</span>
+              <span class="stage-deliverable-tag">Защита от фейк-заявок</span>
+              <span class="stage-deliverable-tag">Управление скидками</span>
+            </div>
+          </div>
+          <div class="stage-price-box">
+            <div class="stage-cost">50 000 ₽</div>
+            <div class="stage-time">Срок: ~10–14 дней</div>
+          </div>
+        </div>
 
-          <div class="result-card save">
-            <div class="result-label">
-              <span>💰 Чистая выгода со своим сайтом в месяц:</span>
-            </div>
-            <div class="result-num save-text" id="netSavings">+171 500 ₽ / мес</div>
-            <div class="result-note" id="paybackText">Разработка окупается за 18 дней! Дальше — чистая прибыль заведению.</div>
+        <!-- Этап 4 -->
+        <div class="stage-card highlight">
+          <div class="stage-num-badge">
+            <span class="num">04</span>
+            <span class="txt">Этап</span>
           </div>
+          <div class="stage-content">
+            <h4>⚡ Онлайн-оплата СБП (0.7%) и Облачные чеки 54-ФЗ</h4>
+            <p>Подключение эквайринга Т-Банка или ЮKassa под ключ. Оплата по СБП в 1 клик, прием банковских карт, безопасные вебхуки и автоформирование фискальных чеков без покупки отдельной кассы.</p>
+            <div class="stage-deliverables">
+              <span class="stage-deliverable-tag">Шлюз СБП (0.4%–0.7%)</span>
+              <span class="stage-deliverable-tag">Интеграция с банком</span>
+              <span class="stage-deliverable-tag">Авточеки по 54-ФЗ</span>
+              <span class="stage-deliverable-tag">Мгновенный возврат при отмене</span>
+            </div>
+          </div>
+          <div class="stage-price-box">
+            <div class="stage-cost">20 000 ₽</div>
+            <div class="stage-time">Срок: ~4–5 дней</div>
+          </div>
+        </div>
+
+        <!-- Этап 5 -->
+        <div class="stage-card">
+          <div class="stage-num-badge">
+            <span class="num">05</span>
+            <span class="txt">Этап</span>
+          </div>
+          <div class="stage-content">
+            <h4>👨‍🍳 Telegram-бот кухни / экран повара KDS, тесты и запуск</h4>
+            <p>Разработка рабочего инструмента для кухни: громкий звуковой сигнал о заказе, смена статусов [Принято] / [Готово], стоп-листы блюд с телефона в 2 клика. Тестовый заказ на 10 ₽ и обучение персонала.</p>
+            <div class="stage-deliverables">
+              <span class="stage-deliverable-tag">Бот со звуком</span>
+              <span class="stage-deliverable-tag">Стоп-листы за 2 секунды</span>
+              <span class="stage-deliverable-tag">Тестовый боевой платеж</span>
+              <span class="stage-deliverable-tag">Обучение поваров</span>
+            </div>
+          </div>
+          <div class="stage-price-box">
+            <div class="stage-cost">25 000 ₽</div>
+            <div class="stage-time">Срок: ~4–5 дней</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Итоговая плашка -->
+      <div class="stages-total-banner">
+        <div class="total-banner-text">
+          <h3>ИТОГО ПОЛНЫЙ ЗАПУСК С НУЛЯ: 150 000 ₽</h3>
+          <p>25 000 ₽ + 45 000 ₽ + 35 000 ₽ + 25 000 ₽ + 20 000 ₽. Оплата поэтапная (по факту сдачи каждого этапа).</p>
+        </div>
+        <div class="total-banner-price">
+          <div class="total-grand-number">150 000 ₽</div>
+          <div class="total-banner-note">✓ Готовая система без абонентских плат</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DETAILED PLAN (VARIANT 2) ==================== -->
+    <section class="plan-section" id="plan-v2">
+      <div class="plan-header">
+        <span class="tag-badge">АРХИТЕКТУРА & ОПЕРАЦИОНКА</span>
+        <h2 class="plan-title">Как устроен Вариант 2: Доставка + СБП + Telegram-бот</h2>
+        <p class="plan-sub">Полное описание: какие сервисы подключаются, как решаются трудности на кухне, пошаговый сценарий заказа и график запуска за 3 недели.</p>
+      </div>
+
+      <!-- Блок 1: Сервисы -->
+      <h3 class="plan-block-title">
+        <span>⚙️</span> 1. Подключаемые сервисы и технологии
+      </h3>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">⚡</span>
+          <div class="service-name">Т-Бизнес / ЮKassa (СБП)</div>
+          <div class="service-desc">Оплата в 1 клик по QR-коду и через мобильные банки. Минимальная комиссия 0.4%–0.7% (вместо 2.2% по картам). Моментальный вебхук подтверждения.</div>
+          <span class="service-badge">Эквайринг</span>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🧾</span>
+          <div class="service-name">Облачные чеки (54-ФЗ)</div>
+          <div class="service-desc">Ресторану не нужно покупать физическую кассу за 40 000 ₽. Сервис автоматически выбивает онлайн-чек гостю и передает данные в налоговую.</div>
+          <span class="service-badge">Закон 54-ФЗ (~1.5 тыс. ₽/мес)</span>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">👨‍🍳</span>
+          <div class="service-name">Telegram Bot API</div>
+          <div class="service-desc">Закрытый рабочий бот для поваров и администратора. Громкий звуковой сигнал о новом заказе, кнопки смены статусов и стоп-листы блюд.</div>
+          <span class="service-badge">Бесплатно навсегда</span>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🗺️</span>
+          <div class="service-name">Яндекс.Карты API</div>
+          <div class="service-desc">Автодополнение адресов по Косулино, Прохладному и Екб. Автоматический расчет зон доставки и минимальной суммы заказа без ошибок клиентов.</div>
+          <span class="service-badge">Геолокация</span>
+        </div>
+      </div>
+
+      <!-- Блок 2: Решение сложностей на кухне -->
+      <h3 class="plan-block-title">
+        <span>🛡️</span> 2. Решение сложностей и подводных камней кухни
+      </h3>
+      <div class="challenges-grid">
+        <div class="challenge-card">
+          <div class="challenge-head">
+            <span>🔊</span>
+            <div class="challenge-title">Проблема: На кухне шумно (вытяжки, печи) — повар пропустит заказ</div>
+          </div>
+          <div class="challenge-problem">Опасность: Заказ упал в чат, телефон завибрировал в кармане фартука, повар не услышал. Гость ждет.</div>
+          <div class="challenge-solution">
+            <strong>Наше решение:</strong> На стену кухни вешается рабочий планшет/смартфон с Bluetooth-колонкой (громкий сигнал гонга при заказе). Либо ставится компактный Wi-Fi чековый термопринтер (6–8 тыс. ₽), который громко пищит и <strong>САМ печатает бумажный чек повару</strong>.
+          </div>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-head">
+            <span>🍲</span>
+            <div class="challenge-title">Проблема: Плов или шашлык закончились посреди смены (Стоп-лист)</div>
+          </div>
+          <div class="challenge-problem">Опасность: Казан опустел, повар забыл предупредить админа сайта, гости продолжают оплачивать несуществующее блюдо.</div>
+          <div class="challenge-solution">
+            <strong>Наше решение:</strong> В служебном Telegram-боте шеф-повар нажимает: <code>[Стоп-лист] ➔ [Чайханский плов] ➔ [Закончился]</code>. На сайте блюдо <strong>мгновенно блокируется</strong> за 1 секунду. Когда сварили новый казан — нажали «Снова в наличии».
+          </div>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-head">
+            <span>🚫</span>
+            <div class="challenge-title">Проблема: Ложные заказы и неоплаченные заявки</div>
+          </div>
+          <div class="challenge-problem">Опасность: Заказали на 3 000 ₽ с оплатой наличными курьеру, повар пожарил мясо, а по адресу никто не открыл дверь.</div>
+          <div class="challenge-solution">
+            <strong>Наше решение:</strong> Доставка запускается <strong>строго по 100% предоплате через СБП / карту на сайте</strong>. Заказ отправляется на кухню ТОЛЬКО после того, как сервер банка прислал подтверждение «Деньги зачислены». Ресторан ничем не рискует.
+          </div>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-head">
+            <span>↩️</span>
+            <div class="challenge-title">Проблема: Гость ошибся в адресе или просит отменить заказ</div>
+          </div>
+          <div class="challenge-problem">Опасность: Долгие банковские возвраты, заявления, ручной перевод денег обратно клиенту.</div>
+          <div class="challenge-solution">
+            <strong>Наше решение:</strong> В карточке заказа в Telegram-боте у администратора есть кнопка <code>[ ❌ Отменить заказ и вернуть деньги ]</code>. Банк мгновенно возвращает деньги на карту гостя в автоматическом режиме.
+          </div>
+        </div>
+      </div>
+
+      <!-- Блок 3: Сценарий заказа от А до Я -->
+      <h3 class="plan-block-title">
+        <span>🔄</span> 3. Как проходит заказ: от клика гостя до выдачи курьеру
+      </h3>
+      <div class="scenario-steps">
+        <div class="scenario-step">
+          <div class="step-num">1</div>
+          <div class="step-role">Гость на сайте</div>
+          <div class="step-action">Выбор и СБП</div>
+          <div class="step-desc">Выбирает блюда в корзину, вводит адрес или самовывоз (-10%), жмет «Оплатить СБП» и подтверждает платеж в приложении своего банка.</div>
+        </div>
+
+        <div class="scenario-step">
+          <div class="step-num">2</div>
+          <div class="step-role">Банк & Налоговая</div>
+          <div class="step-action">Проверка & Чек</div>
+          <div class="step-desc">Банк моментально подтверждает списание по вебхуку. Облачная касса автоматически генерирует электронный чек по 54-ФЗ.</div>
+        </div>
+
+        <div class="scenario-step">
+          <div class="step-num">3</div>
+          <div class="step-role">Кухня ресторана</div>
+          <div class="step-action">Громкий сигнал бота</div>
+          <div class="step-desc">В закрытом чате раздается звук, повар видит состав блюд и комментарии, жмет кнопку <code>[Принято в готовку]</code>. Гость видит статус на сайте.</div>
+        </div>
+
+        <div class="scenario-step">
+          <div class="step-num">4</div>
+          <div class="step-role">Курьер / Выдача</div>
+          <div class="step-action">Готово к отправке</div>
+          <div class="step-desc">Пакет собран, повар жмет <code>[Готово]</code>. Курьер (свой или Яндекс Такси) везет горячую еду клиенту без задержек.</div>
+        </div>
+      </div>
+
+      <!-- Блок 4: Пошаговый график запуска -->
+      <h3 class="plan-block-title">
+        <span>📅</span> 4. График разработки с нуля (3.5 – 5 недель «под ключ»)
+      </h3>
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <div class="roadmap-period">Неделя 1 – 1.5</div>
+          <h4>UI/UX Дизайн & Банк</h4>
+          <ul class="roadmap-list">
+            <li><span>✓</span> <strong>Дизайн в Figma с нуля:</strong> индивидуальная отрисовка меню, корзины и экранов под стиль кафе.</li>
+            <li><span>✓</span> <strong>Подача заявки на эквайринг:</strong> открытие СБП в Т-Банке или ЮKassa (2–3 дня).</li>
+            <li><span>✓</span> <strong>Зоны доставки:</strong> разметка поселков (Косулино, Прохладный, Растущий) и минимальных чеков.</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-period">Неделя 2 – 3</div>
+          <h4>Фронтенд & Бэкенд</h4>
+          <ul class="roadmap-list">
+            <li><span>✓</span> <strong>Адаптивная верстка:</strong> каталог блюд, шторка заказа, расчет скидок и зон.</li>
+            <li><span>✓</span> <strong>Бэкенд и база данных:</strong> серверная логика заказов, учет статусов и безопасность.</li>
+            <li><span>✓</span> <strong>Интеграция СБП и 54-ФЗ:</strong> настройка онлайн-платежей и чеков для налоговой.</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-period">Неделя 4 – 5</div>
+          <h4>Бот кухни, Тесты & Запуск</h4>
+          <ul class="roadmap-list">
+            <li><span>✓</span> <strong>Служебный бот / экран кухни:</strong> оповещения со звуком, смена статусов, стоп-листы.</li>
+            <li><span>✓</span> <strong>Тестовый боевой заказ:</strong> оплата на 10 ₽ реальной картой через СБП, проверка кухни.</li>
+            <li><span>✓</span> <strong>Обучение персонала:</strong> инструктаж поваров и администратора.</li>
+            <li><span>🚀</span> <strong>Официальный запуск доставки!</strong></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -913,50 +1513,5 @@
       </div>
     </section>
   </main>
-
-  <script>
-    // Live Savings Calculator Logic
-    const turnoverSlider = document.getElementById('turnoverSlider');
-    const turnoverDisplay = document.getElementById('turnoverDisplay');
-    const yandexLoss = document.getElementById('yandexLoss');
-    const ownSiteCost = document.getElementById('ownSiteCost');
-    const netSavings = document.getElementById('netSavings');
-    const paybackText = document.getElementById('paybackText');
-
-    function formatNumber(num) {
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
-    }
-
-    function updateCalculator() {
-      const turnover = parseInt(turnoverSlider.value, 10);
-      turnoverDisplay.textContent = formatNumber(turnover);
-
-      // Yandex takes 35%
-      const yandexFee = Math.round(turnover * 0.35);
-      yandexLoss.textContent = '-' + formatNumber(yandexFee);
-
-      // Own site: SBP fee 0.7% + ~1500 hosting/receipts
-      const ownFee = Math.round(turnover * 0.007 + 1500);
-      ownSiteCost.textContent = '-' + formatNumber(ownFee);
-
-      // Monthly savings
-      const savings = yandexFee - ownFee;
-      netSavings.textContent = '+' + formatNumber(savings) + ' / мес';
-
-      // Payback calculation for Option 2 (avg 105 000 ₽)
-      const avgDevCost = 105000;
-      const days = Math.max(1, Math.round((avgDevCost / savings) * 30));
-
-      if (days <= 30) {
-        paybackText.textContent = `Разработка окупается всего за ${days} дней! Дальше — чистая прибыль заведению.`;
-      } else {
-        const months = (days / 30).toFixed(1);
-        paybackText.textContent = `Разработка окупается за ${months} мес. экономии на комиссии!`;
-      }
-    }
-
-    turnoverSlider.addEventListener('input', updateCalculator);
-    updateCalculator();
-  </script>
 </body>
 </html>
