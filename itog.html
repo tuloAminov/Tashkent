@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стратегия и варианты запуска сайта — Ресторан «Ташкент»</title>
+  
+  <!-- Google Fonts: Playfair Display + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #0B0A09;
+      --bg-surface: #141312;
+      --bg-card: #1B1917;
+      --accent-gold: #C5A059;
+      --accent-gold-light: #E2C285;
+      --accent-gold-dark: #8E6A2C;
+      --text-main: #F5F1E8;
+      --text-muted: #9E9689;
+      --border-gold: rgba(197, 160, 89, 0.25);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-bottom: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      padding: 18px 0;
+      background: rgba(14, 13, 12, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-bar__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--accent-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      letter-spacing: 2px;
+      font-size: 16px;
+      color: var(--accent-gold-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      font-family: var(--font-sans);
+    }
+
+    .btn_gold {
+      background: linear-gradient(135deg, #E2C285 0%, #C5A059 50%, #8E6A2C 100%);
+      color: #0E0D0C;
+      border: none;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+    }
+
+    .btn_gold:hover {
+      box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn_outline {
+      background: transparent;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
+    }
+
+    .btn_outline:hover {
+      background: rgba(197, 160, 89, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* HERO INTRO */
+    .hero-intro {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    .tag-badge {
+      display: inline-block;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      background: rgba(197, 160, 89, 0.08);
+    }
+
+    .main-title {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #FFFFFF 30%, #E2C285 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* PRICING GRID */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0 60px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pricing-card:hover {
+      border-color: rgba(197, 160, 89, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--accent-gold);
+      background: linear-gradient(180deg, #211E1A 0%, #171513 100%);
+      box-shadow: 0 10px 40px rgba(197, 160, 89, 0.2);
+    }
+
+    .card-ribbon {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+      white-space: nowrap;
+    }
+
+    .card-header {
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-stage {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: #FFF;
+      margin-bottom: 6px;
+    }
+
+    .card-target {
+      font-size: 13px;
+      color: var(--text-muted);
+      min-height: 38px;
+    }
+
+    .card-price-block {
+      margin-bottom: 24px;
+    }
+
+    .price-value {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--accent-gold-light);
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price-unit {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .monthly-cost {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .monthly-cost strong {
+      color: #FFF;
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+      flex: 1;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #D8D2C5;
+    }
+
+    .feature-icon {
+      color: #22c55e;
+      font-weight: 800;
+      font-size: 14px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .feature-icon.dim {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .card-footer-metrics {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .metric-col span:first-child {
+      display: block;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .metric-col span:last-child {
+      font-weight: 700;
+      color: #FFF;
+    }
+
+    /* CALCULATOR SECTION */
+    .calc-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calc-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .calc-header {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .slider-box {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .slider-title {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .slider-value-display {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent-gold-light);
+      margin-bottom: 16px;
+    }
+
+    input[type=range] {
+      width: 100%;
+      height: 8px;
+      background: #2A2724;
+      border-radius: 4px;
+      outline: none;
+      accent-color: var(--accent-gold);
+      cursor: pointer;
+    }
+
+    .slider-scale {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .calc-results-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .result-card.loss {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.04);
+    }
+
+    .result-card.save {
+      border-color: rgba(34, 197, 94, 0.4);
+      background: rgba(34, 197, 94, 0.05);
+      grid-column: span 2;
+    }
+
+    .result-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .result-num {
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .result-num.loss-text {
+      color: #ef4444;
+    }
+
+    .result-num.save-text {
+      color: #22c55e;
+      font-size: 32px;
+    }
+
+    .result-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* COMPARISON TABLE */
+    .table-section {
+      margin: 60px 0;
+    }
+
+    .table-title {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: var(--bg-card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    th {
+      background: rgba(0, 0, 0, 0.3);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td:first-child {
+      font-weight: 600;
+      color: #FFF;
+      width: 25%;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge-check {
+      color: #22c55e;
+      font-weight: 700;
+    }
+
+    .badge-cross {
+      color: #ef4444;
+      font-weight: 700;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      text-align: center;
+      background: linear-gradient(180deg, #1A1816 0%, #121110 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 48px 24px;
+      margin-top: 60px;
+    }
+
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #FFF;
+    }
+
+    .cta-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 540px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 992px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-title {
+        font-size: 30px;
+      }
+      .calc-section {
+        padding: 24px 16px;
+      }
+      .calc-results-box {
+        grid-template-columns: 1fr;
+      }
+      .result-card.save {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="top-bar">
+    <div class="container top-bar__inner">
+      <a href="index.html" class="brand-wrap">
+        <span class="brand-badge">Т</span>
+        <span class="brand-title">ТАШКЕНТ RESTAURANT</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn_outline">
+          ← Открыть демо-сайт
+        </a>
+        <a href="#calc" class="btn btn_gold">
+          Калькулятор выгоды
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO INTRO ==================== -->
+  <main class="container">
+    <section class="hero-intro">
+      <span class="tag-badge">ПРЕЗЕНТАЦИЯ ДЛЯ ВСТРЕЧИ</span>
+      <h1 class="main-title">Стратегия запуска сайта & доставки</h1>
+      <p class="hero-subtitle">Прозрачное сравнение вариантов создания сайта для кафе «Ташкент»: стоимость разработки, сроки, ежемесячные расходы и расчет окупаемости.</p>
+    </section>
+
+    <!-- ==================== 3 PRICING OPTIONS ==================== -->
+    <section class="pricing-grid">
+
+      <!-- Вариант 1 -->
+      <div class="pricing-card">
+        <div class="card-header">
+          <span class="card-stage">ВАРИАНТ 1</span>
+          <h3 class="card-title">Имиджевый сайт</h3>
+          <p class="card-target">Сайт-визитка для привлечения гостей в зал и бронирования столиков</p>
+        </div>
+
+        <div class="card-price-block">
+          <div class="price-value">35 000 – 50 000 <span class="price-unit">₽</span></div>
+          <div class="monthly-cost">
+            <span>Расход в месяц:</span> <strong>~400 ₽</strong> (хостинг)
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Полноэкранный Hero-слайдер залов и блюд</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Интерактивное меню кухни с фото и ценами</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Форма бронирования столов (в WhatsApp/Telegram)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Отзывы гостей, галереи и карта проезда</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon dim">✕</span>
+            <span style="color: var(--text-muted);">Без онлайн-корзины и оплаты</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon dim">✕</span>
+            <span style="color: var(--text-muted);">Заказы доставки только по звонку</span>
+          </li>
+        </ul>
+
+        <div class="card-footer-metrics">
+          <div class="metric-col">
+            <span>Срок запуска:</span>
+            <span>5 – 7 дней</span>
+          </div>
+          <div class="metric-col">
+            <span>Касса:</span>
+            <span>Не требуется</span>
+          </div>
+        </div>
+
+        <a href="index.html" class="btn btn_outline" style="justify-content: center;">
+          Посмотреть пример
+        </a>
+      </div>
+
+      <!-- Вариант 2: РЕКОМЕНДУЕМЫЙ -->
+      <div class="pricing-card featured">
+        <div class="card-ribbon">⭐ РЕКОМЕНДУЕМЫЙ СТАРТ</div>
+
+        <div class="card-header">
+          <span class="card-stage">ВАРИАНТ 2 (ХИТ)</span>
+          <h3 class="card-title">Доставка + Telegram-бот</h3>
+          <p class="card-target">Свой сайт доставки с быстрой оплатой по СБП и звуковым ботом для кухни</p>
+        </div>
+
+        <div class="card-price-block">
+          <div class="price-value">80 000 – 110 000 <span class="price-unit">₽</span></div>
+          <div class="monthly-cost">
+            <span>Расход в месяц:</span> <strong>~2 500 ₽ + 0.7% СБП</strong>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Интерактивная корзина</strong> и переключатель «Доставка / Самовывоз (-10%)»</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Оплата по СБП в 1 клик</strong> (комиссия всего 0.4–0.7% банку)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Защита от фейков:</strong> заказ на кухню уходит ТОЛЬКО после реальной оплаты</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Громкий Telegram-бот кухни:</strong> повар слышит звонок и видит блюда с кнопкой [Принял]</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Стоп-листы с телефона:</strong> шеф убирает закончившийся плов за 2 клика</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Вся база гостей у вас</strong> (телефоны для акций и броней)</span>
+          </li>
+        </ul>
+
+        <div class="card-footer-metrics">
+          <div class="metric-col">
+            <span>Срок запуска:</span>
+            <span>2 – 3 недели</span>
+          </div>
+          <div class="metric-col">
+            <span>Окупаемость:</span>
+            <span>~1.5 месяца</span>
+          </div>
+        </div>
+
+        <a href="index.html#menu" class="btn btn_gold" style="justify-content: center;">
+          Протестировать корзину в демо →
+        </a>
+      </div>
+
+      <!-- Вариант 3 -->
+      <div class="pricing-card">
+        <div class="card-header">
+          <span class="card-stage">ВАРИАНТ 3 (ПРО)</span>
+          <h3 class="card-title">Интеграция с кассой</h3>
+          <p class="card-target">Сайт с прямым подключением к кассовой системе iiko / Frontpad / r_keeper</p>
+        </div>
+
+        <div class="card-price-block">
+          <div class="price-value">150 000 – 190 000 <span class="price-unit">₽</span></div>
+          <div class="monthly-cost">
+            <span>Расход в месяц:</span> <strong>~5 000 ₽ + касса</strong>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Все функции Варианта 2 (корзина, СБП, зоны)</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Автопечать чека на кухне:</strong> заказ сам вылезает из термопринтера повару</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Складской учет:</strong> автоматическое списание мяса, риса и специй по техкартам</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span><strong>Автоматические стоп-листы:</strong> при списании на кассе блюдо блокируется на сайте</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Полная фискализация по 54-ФЗ через кассу ресторана</span>
+          </li>
+        </ul>
+
+        <div class="card-footer-metrics">
+          <div class="metric-col">
+            <span>Срок запуска:</span>
+            <span>3 – 5 недель</span>
+          </div>
+          <div class="metric-col">
+            <span>Требуется:</span>
+            <span>iiko / Frontpad</span>
+          </div>
+        </div>
+
+        <a href="SOLUTIONS_AND_INTEGRATIONS.md" class="btn btn_outline" style="justify-content: center;">
+          Подробнее об интеграции
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ==================== INTERACTIVE SAVINGS CALCULATOR ==================== -->
+    <section class="calc-section" id="calc">
+      <div class="calc-header">
+        <span class="tag-badge">ЭКОНОМИКА В ЦИФРАХ</span>
+        <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 8px;">Калькулятор экономии: Свой сайт vs Яндекс Еда</h2>
+        <p style="color: var(--text-muted); font-size: 14px;">Посмотрите, сколько чистой прибыли кафе теряет на комиссии агрегатора 35% и как быстро окупается свой сайт</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="slider-box">
+          <div class="slider-title">Выручка доставки кафе в месяц:</div>
+          <div class="slider-value-display" id="turnoverDisplay">500 000 ₽</div>
+          <input type="range" id="turnoverSlider" min="100000" max="2000000" step="50000" value="500000">
+          <div class="slider-scale">
+            <span>100 тыс. ₽</span>
+            <span>1 млн ₽</span>
+            <span>2 млн ₽</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 14px;">
+            💡 Передвигайте ползунок, чтобы увидеть расчет для вашего объема заказов.
+          </p>
+        </div>
+
+        <div class="calc-results-box">
+          <div class="result-card loss">
+            <div class="result-label">
+              <span>⚠️ Комиссия Яндекс Еды (35%):</span>
+            </div>
+            <div class="result-num loss-text" id="yandexLoss">-175 000 ₽</div>
+            <div class="result-note">Уходит сервису каждый месяц навсегда</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">
+              <span>💳 Расходы своего сайта (СБП 0.7%):</span>
+            </div>
+            <div class="result-num" style="color: #FFF;" id="ownSiteCost">-3 500 ₽</div>
+            <div class="result-note">Комиссия банку + хостинг сервера</div>
+          </div>
+
+          <div class="result-card save">
+            <div class="result-label">
+              <span>💰 Чистая выгода со своим сайтом в месяц:</span>
+            </div>
+            <div class="result-num save-text" id="netSavings">+171 500 ₽ / мес</div>
+            <div class="result-note" id="paybackText">Разработка окупается за 18 дней! Дальше — чистая прибыль заведению.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPARISON TABLE ==================== -->
+    <section class="table-section">
+      <h3 class="table-title">Сравнение ключевых возможностей</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Возможность</th>
+              <th>Вариант 1 (Имидж)</th>
+              <th>Вариант 2 (Telegram-бот)</th>
+              <th>Вариант 3 (Касса iiko)</th>
+              <th>Только Яндекс Еда</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Прием онлайн-заказов на сайте</td>
+              <td><span class="badge-cross">✕ Нет</span></td>
+              <td><span class="badge-check">✓ Есть (Корзина)</span></td>
+              <td><span class="badge-check">✓ Есть (Корзина)</span></td>
+              <td><span class="badge-cross">✕ Только в их приложении</span></td>
+            </tr>
+            <tr>
+              <td>Оплата по СБП (0.7%)</td>
+              <td><span class="badge-cross">✕ Нет</span></td>
+              <td><span class="badge-check">✓ Мгновенно в 1 клик</span></td>
+              <td><span class="badge-check">✓ Мгновенно в 1 клик</span></td>
+              <td><span class="badge-cross">✕ Комиссия 35%</span></td>
+            </tr>
+            <tr>
+              <td>Оповещение кухни</td>
+              <td>Звонок по телефону</td>
+              <td><span class="badge-check">✓ Громкий звук + Telegram</span></td>
+              <td><span class="badge-check">✓ Автопечать чека повару</span></td>
+              <td>Планшет Яндекса</td>
+            </tr>
+            <tr>
+              <td>Быстрый стоп-лист</td>
+              <td>Руками на сайте</td>
+              <td><span class="badge-check">✓ Кнопкой в Telegram-боте</span></td>
+              <td><span class="badge-check">✓ Автоматически из кассы</span></td>
+              <td>В личном кабинете</td>
+            </tr>
+            <tr>
+              <td>Интерактивная бронь столов</td>
+              <td><span class="badge-check">✓ Есть</span></td>
+              <td><span class="badge-check">✓ Есть</span></td>
+              <td><span class="badge-check">✓ Есть с интеграцией</span></td>
+              <td><span class="badge-cross">✕ Нет</span></td>
+            </tr>
+            <tr>
+              <td>Кому принадлежат клиенты</td>
+              <td><strong>Вам</strong></td>
+              <td><strong>Вам (вся база номеров)</strong></td>
+              <td><strong>Вам (вся база номеров)</strong></td>
+              <td>Яндексу (номера скрыты)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== BOTTOM CTA ==================== -->
+    <section class="bottom-cta">
+      <h3 class="cta-title">Готовы обсудить запуск?</h3>
+      <p class="cta-desc">Все необходимые документы (вопросы заказчику, обзор кассовых интеграций и живой интерактивный макет с корзиной) уже подготовлены.</p>
+
+      <div class="cta-buttons">
+        <a href="index.html" class="btn btn_gold">
+          🚀 Открыть интерактивный сайт «Ташкент»
+        </a>
+        <a href="CLIENT_QUESTIONS.md" class="btn btn_outline">
+          📋 Открыть список вопросов заказчику
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Live Savings Calculator Logic
+    const turnoverSlider = document.getElementById('turnoverSlider');
+    const turnoverDisplay = document.getElementById('turnoverDisplay');
+    const yandexLoss = document.getElementById('yandexLoss');
+    const ownSiteCost = document.getElementById('ownSiteCost');
+    const netSavings = document.getElementById('netSavings');
+    const paybackText = document.getElementById('paybackText');
+
+    function formatNumber(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+    }
+
+    function updateCalculator() {
+      const turnover = parseInt(turnoverSlider.value, 10);
+      turnoverDisplay.textContent = formatNumber(turnover);
+
+      // Yandex takes 35%
+      const yandexFee = Math.round(turnover * 0.35);
+      yandexLoss.textContent = '-' + formatNumber(yandexFee);
+
+      // Own site: SBP fee 0.7% + ~1500 hosting/receipts
+      const ownFee = Math.round(turnover * 0.007 + 1500);
+      ownSiteCost.textContent = '-' + formatNumber(ownFee);
+
+      // Monthly savings
+      const savings = yandexFee - ownFee;
+      netSavings.textContent = '+' + formatNumber(savings) + ' / мес';
+
+      // Payback calculation for Option 2 (avg 105 000 ₽)
+      const avgDevCost = 105000;
+      const days = Math.max(1, Math.round((avgDevCost / savings) * 30));
+
+      if (days <= 30) {
+        paybackText.textContent = `Разработка окупается всего за ${days} дней! Дальше — чистая прибыль заведению.`;
+      } else {
+        const months = (days / 30).toFixed(1);
+        paybackText.textContent = `Разработка окупается за ${months} мес. экономии на комиссии!`;
+      }
+    }
+
+    turnoverSlider.addEventListener('input', updateCalculator);
+    updateCalculator();
+  </script>
+</body>
+</html>
